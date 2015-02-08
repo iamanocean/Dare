@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF288AD71A86F5060028E22A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288AD61A86F5060028E22A /* AppDelegate.swift */; };
+		BF288ADA1A86F5060028E22A /* Dare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */; };
+		BF288ADC1A86F5060028E22A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288ADB1A86F5060028E22A /* ViewController.swift */; };
+		BF288ADF1A86F5060028E22A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF288ADD1A86F5060028E22A /* Main.storyboard */; };
+		BF288AE11A86F5060028E22A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF288AE01A86F5060028E22A /* Images.xcassets */; };
+		BF288AE41A86F5060028E22A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF288AE21A86F5060028E22A /* LaunchScreen.xib */; };
+		BF288AF01A86F5060028E22A /* DareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288AEF1A86F5060028E22A /* DareTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF288AEA1A86F5060028E22A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF288AC91A86F5060028E22A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF288AD01A86F5060028E22A;
+			remoteInfo = Dare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BF288AD11A86F5060028E22A /* Dare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF288AD51A86F5060028E22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF288AD61A86F5060028E22A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF288AD91A86F5060028E22A /* Dare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dare.xcdatamodel; sourceTree = "<group>"; };
+		BF288ADB1A86F5060028E22A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF288ADE1A86F5060028E22A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF288AE01A86F5060028E22A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BF288AE31A86F5060028E22A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BF288AE91A86F5060028E22A /* DareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF288AEE1A86F5060028E22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF288AEF1A86F5060028E22A /* DareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DareTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF288ACE1A86F5060028E22A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF288AE61A86F5060028E22A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF288AC81A86F5060028E22A = {
+			isa = PBXGroup;
+			children = (
+				BF288AD31A86F5060028E22A /* Dare */,
+				BF288AEC1A86F5060028E22A /* DareTests */,
+				BF288AD21A86F5060028E22A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF288AD21A86F5060028E22A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF288AD11A86F5060028E22A /* Dare.app */,
+				BF288AE91A86F5060028E22A /* DareTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF288AD31A86F5060028E22A /* Dare */ = {
+			isa = PBXGroup;
+			children = (
+				BF288AD61A86F5060028E22A /* AppDelegate.swift */,
+				BF288ADB1A86F5060028E22A /* ViewController.swift */,
+				BF288ADD1A86F5060028E22A /* Main.storyboard */,
+				BF288AE01A86F5060028E22A /* Images.xcassets */,
+				BF288AE21A86F5060028E22A /* LaunchScreen.xib */,
+				BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */,
+				BF288AD41A86F5060028E22A /* Supporting Files */,
+			);
+			path = Dare;
+			sourceTree = "<group>";
+		};
+		BF288AD41A86F5060028E22A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF288AD51A86F5060028E22A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF288AEC1A86F5060028E22A /* DareTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF288AEF1A86F5060028E22A /* DareTests.swift */,
+				BF288AED1A86F5060028E22A /* Supporting Files */,
+			);
+			path = DareTests;
+			sourceTree = "<group>";
+		};
+		BF288AED1A86F5060028E22A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF288AEE1A86F5060028E22A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF288AD01A86F5060028E22A /* Dare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF288AF31A86F5060028E22A /* Build configuration list for PBXNativeTarget "Dare" */;
+			buildPhases = (
+				BF288ACD1A86F5060028E22A /* Sources */,
+				BF288ACE1A86F5060028E22A /* Frameworks */,
+				BF288ACF1A86F5060028E22A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dare;
+			productName = Dare;
+			productReference = BF288AD11A86F5060028E22A /* Dare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF288AE81A86F5060028E22A /* DareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF288AF61A86F5060028E22A /* Build configuration list for PBXNativeTarget "DareTests" */;
+			buildPhases = (
+				BF288AE51A86F5060028E22A /* Sources */,
+				BF288AE61A86F5060028E22A /* Frameworks */,
+				BF288AE71A86F5060028E22A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF288AEB1A86F5060028E22A /* PBXTargetDependency */,
+			);
+			name = DareTests;
+			productName = DareTests;
+			productReference = BF288AE91A86F5060028E22A /* DareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF288AC91A86F5060028E22A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Louis Olivas";
+				TargetAttributes = {
+					BF288AD01A86F5060028E22A = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					BF288AE81A86F5060028E22A = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = BF288AD01A86F5060028E22A;
+					};
+				};
+			};
+			buildConfigurationList = BF288ACC1A86F5060028E22A /* Build configuration list for PBXProject "Dare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF288AC81A86F5060028E22A;
+			productRefGroup = BF288AD21A86F5060028E22A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF288AD01A86F5060028E22A /* Dare */,
+				BF288AE81A86F5060028E22A /* DareTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF288ACF1A86F5060028E22A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF288ADF1A86F5060028E22A /* Main.storyboard in Resources */,
+				BF288AE41A86F5060028E22A /* LaunchScreen.xib in Resources */,
+				BF288AE11A86F5060028E22A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF288AE71A86F5060028E22A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF288ACD1A86F5060028E22A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF288ADC1A86F5060028E22A /* ViewController.swift in Sources */,
+				BF288AD71A86F5060028E22A /* AppDelegate.swift in Sources */,
+				BF288ADA1A86F5060028E22A /* Dare.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF288AE51A86F5060028E22A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF288AF01A86F5060028E22A /* DareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF288AEB1A86F5060028E22A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF288AD01A86F5060028E22A /* Dare */;
+			targetProxy = BF288AEA1A86F5060028E22A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF288ADD1A86F5060028E22A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF288ADE1A86F5060028E22A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF288AE21A86F5060028E22A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF288AE31A86F5060028E22A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF288AF11A86F5060028E22A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF288AF21A86F5060028E22A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF288AF41A86F5060028E22A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Dare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF288AF51A86F5060028E22A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Dare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BF288AF71A86F5060028E22A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dare.app/Dare";
+			};
+			name = Debug;
+		};
+		BF288AF81A86F5060028E22A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dare.app/Dare";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF288ACC1A86F5060028E22A /* Build configuration list for PBXProject "Dare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF288AF11A86F5060028E22A /* Debug */,
+				BF288AF21A86F5060028E22A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF288AF31A86F5060028E22A /* Build configuration list for PBXNativeTarget "Dare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF288AF41A86F5060028E22A /* Debug */,
+				BF288AF51A86F5060028E22A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BF288AF61A86F5060028E22A /* Build configuration list for PBXNativeTarget "DareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF288AF71A86F5060028E22A /* Debug */,
+				BF288AF81A86F5060028E22A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BF288AD91A86F5060028E22A /* Dare.xcdatamodel */,
+			);
+			currentVersion = BF288AD91A86F5060028E22A /* Dare.xcdatamodel */;
+			path = Dare.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BF288AC91A86F5060028E22A /* Project object */;
+}
