@@ -38,6 +38,11 @@
 		BF288AE91A86F5060028E22A /* DareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF288AEE1A86F5060028E22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF288AEF1A86F5060028E22A /* DareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DareTests.swift; sourceTree = "<group>"; };
+		BFF8A2961AC095030097518F /* BebasNeue Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Bold.otf"; sourceTree = "<group>"; };
+		BFF8A2971AC095030097518F /* BebasNeue Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Book.otf"; sourceTree = "<group>"; };
+		BFF8A2981AC095030097518F /* BebasNeue Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Light.otf"; sourceTree = "<group>"; };
+		BFF8A2991AC095030097518F /* BebasNeue Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Regular.otf"; sourceTree = "<group>"; };
+		BFF8A29A1AC095030097518F /* BebasNeue Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Thin.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +98,11 @@
 		BF288AD41A86F5060028E22A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BFF8A2961AC095030097518F /* BebasNeue Bold.otf */,
+				BFF8A2971AC095030097518F /* BebasNeue Book.otf */,
+				BFF8A2981AC095030097518F /* BebasNeue Light.otf */,
+				BFF8A2991AC095030097518F /* BebasNeue Regular.otf */,
+				BFF8A29A1AC095030097518F /* BebasNeue Thin.otf */,
 				BF288AD51A86F5060028E22A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -409,6 +419,7 @@
 				BF288AF51A86F5060028E22A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF288AF61A86F5060028E22A /* Build configuration list for PBXNativeTarget "DareTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +428,7 @@
 				BF288AF81A86F5060028E22A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
