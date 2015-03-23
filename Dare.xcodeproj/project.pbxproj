@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		BF288AD71A86F5060028E22A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288AD61A86F5060028E22A /* AppDelegate.swift */; };
 		BF288ADA1A86F5060028E22A /* Dare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */; };
-		BF288ADC1A86F5060028E22A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288ADB1A86F5060028E22A /* ViewController.swift */; };
+		BF288ADC1A86F5060028E22A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288ADB1A86F5060028E22A /* SignInViewController.swift */; };
 		BF288ADF1A86F5060028E22A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF288ADD1A86F5060028E22A /* Main.storyboard */; };
 		BF288AE11A86F5060028E22A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF288AE01A86F5060028E22A /* Images.xcassets */; };
 		BF288AE41A86F5060028E22A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF288AE21A86F5060028E22A /* LaunchScreen.xib */; };
 		BF288AF01A86F5060028E22A /* DareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288AEF1A86F5060028E22A /* DareTests.swift */; };
+		BFF8A29C1AC09F270097518F /* BebasNeue Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2961AC095030097518F /* BebasNeue Bold.otf */; };
+		BFF8A29D1AC09F270097518F /* BebasNeue Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2971AC095030097518F /* BebasNeue Book.otf */; };
+		BFF8A29E1AC09F270097518F /* BebasNeue Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2981AC095030097518F /* BebasNeue Light.otf */; };
+		BFF8A29F1AC09F270097518F /* BebasNeue Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2991AC095030097518F /* BebasNeue Regular.otf */; };
+		BFF8A2A01AC09F270097518F /* BebasNeue Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A29A1AC095030097518F /* BebasNeue Thin.otf */; };
+		BFF8A2A21AC0A8380097518F /* AccountCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +37,7 @@
 		BF288AD51A86F5060028E22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF288AD61A86F5060028E22A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF288AD91A86F5060028E22A /* Dare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dare.xcdatamodel; sourceTree = "<group>"; };
-		BF288ADB1A86F5060028E22A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF288ADB1A86F5060028E22A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BF288ADE1A86F5060028E22A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF288AE01A86F5060028E22A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF288AE31A86F5060028E22A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -43,6 +49,7 @@
 		BFF8A2981AC095030097518F /* BebasNeue Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Light.otf"; sourceTree = "<group>"; };
 		BFF8A2991AC095030097518F /* BebasNeue Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Regular.otf"; sourceTree = "<group>"; };
 		BFF8A29A1AC095030097518F /* BebasNeue Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Thin.otf"; sourceTree = "<group>"; };
+		BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				BF288AD61A86F5060028E22A /* AppDelegate.swift */,
-				BF288ADB1A86F5060028E22A /* ViewController.swift */,
+				BF288ADB1A86F5060028E22A /* SignInViewController.swift */,
 				BF288ADD1A86F5060028E22A /* Main.storyboard */,
+				BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */,
 				BF288AE01A86F5060028E22A /* Images.xcassets */,
 				BF288AE21A86F5060028E22A /* LaunchScreen.xib */,
 				BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */,
@@ -205,6 +213,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF8A29C1AC09F270097518F /* BebasNeue Bold.otf in Resources */,
+				BFF8A29D1AC09F270097518F /* BebasNeue Book.otf in Resources */,
+				BFF8A29E1AC09F270097518F /* BebasNeue Light.otf in Resources */,
+				BFF8A29F1AC09F270097518F /* BebasNeue Regular.otf in Resources */,
+				BFF8A2A01AC09F270097518F /* BebasNeue Thin.otf in Resources */,
 				BF288ADF1A86F5060028E22A /* Main.storyboard in Resources */,
 				BF288AE41A86F5060028E22A /* LaunchScreen.xib in Resources */,
 				BF288AE11A86F5060028E22A /* Images.xcassets in Resources */,
@@ -225,9 +238,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF288ADC1A86F5060028E22A /* ViewController.swift in Sources */,
+				BF288ADC1A86F5060028E22A /* SignInViewController.swift in Sources */,
 				BF288AD71A86F5060028E22A /* AppDelegate.swift in Sources */,
 				BF288ADA1A86F5060028E22A /* Dare.xcdatamodeld in Sources */,
+				BFF8A2A21AC0A8380097518F /* AccountCreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

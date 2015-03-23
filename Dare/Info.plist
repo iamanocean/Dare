@@ -30,6 +30,16 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BebasNeue Regular.otf</string>
+		<string>BebasNeue Book.otf</string>
+		<string>BebasNeue Bold.otf</string>
+		<string>BebasNeue Light.otf</string>
+		<string>BebasNeue Thin.otf</string>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
