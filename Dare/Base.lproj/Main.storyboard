@@ -52,7 +52,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Dg7-rC-PGE" kind="show" id="UEO-fa-VrZ"/>
+                                    <action selector="userDidAskToCreateNewAccount:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DLz-Mk-LhS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -85,7 +85,7 @@
         <!--Account Creation View Controller-->
         <scene sceneID="bAc-qh-cBg">
             <objects>
-                <viewController id="Dg7-rC-PGE" customClass="AccountCreationViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountCreationViewController" id="Dg7-rC-PGE" customClass="AccountCreationViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0ez-a6-aku"/>
                         <viewControllerLayoutGuide type="bottom" id="91C-Mt-Kiw"/>

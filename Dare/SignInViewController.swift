@@ -20,22 +20,20 @@ class SignInViewController: UIViewController {
     var fieldArray: NSArray = NSArray()
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //// CONSIDER DELETING
-        // UITextFieldArray used for implementing keyboard's 'next' feature
-        //fieldArray = [emailTextField, passwordTextField]
-        
-        // Setup next button for email text field.
+        // Set up 'next' button for emailTextField. Set up 'go' button for passwordTextField
         emailTextField.addTarget(passwordTextField, action: "becomeFirstResponder", forControlEvents: UIControlEvents.EditingDidEndOnExit)
 
+        passwordTextField.addTarget(self, action: "signIn", forControlEvents: UIControlEvents.EditingDidEndOnExit)
         
         // Do any additional setup after loading the view, typically from a nib.
         // Set titles for outlets
         signInLabel.text? = "SIGN IN"
         newAccountButton.setTitle("I don't have an account.", forState: UIControlState.Normal)
-        
         /*
         Custom Typefaces are added as follows:
             1. Click and drag the typefaces to the sidebar to add them to the project
@@ -57,6 +55,9 @@ class SignInViewController: UIViewController {
 
     }
 
+    
+    
+    
     /**
     :brief:     Overrode viewDidAppear to allow autohiding the keyboard
     :param:     animated        A boolean to indicate whether or not the views appearance is animated
@@ -69,6 +70,9 @@ class SignInViewController: UIViewController {
         self.view.addGestureRecognizer(tapRecognizer)
     }
     
+    
+    
+    
     /**
     :brief:     Helper method used to autohide the keyboard when a user taps on the screen
     :param:     recognizer      A UITapGestureRecognizer to respond to.
@@ -78,27 +82,63 @@ class SignInViewController: UIViewController {
     }
     
     
-    ////CONSIDER DELETING
-    /*
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
-        
-        println("I RAn")
-        var didResign: Bool = textField.resignFirstResponder()
-        if (!didResign) {
-            return false;
+    
+    
+    /**
+    :brief:     Incomplete function that handles signing in to the application
+    */
+    func signIn() {
+        let passwordRecoveryNecessary: Bool = false;
+        if verifyCredentialsForEmail(emailTextField.text, withPassword: passwordTextField.text) {
+            
+        } else {
+            let incorrectCredentialsAlert: UIAlertController = UIAlertController(title: "Incorrect Credentials", message: "Incorrect email or password provided", preferredStyle: UIAlertControllerStyle.ActionSheet)
+
+            incorrectCredentialsAlert.addAction(
+                UIAlertAction(title: "Try Again.", style: UIAlertActionStyle.Cancel, handler: nil))
+            
+            incorrectCredentialsAlert.addAction(
+                UIAlertAction(title: "Recover Password", style: UIAlertActionStyle.Destructive, handler:
+                    {(_) -> Void in
+                        self.sendPasswordRecoveryForEmail(self.emailTextField.text, withPassword: self.passwordTextField.text)
+                    }
+                )
+            )
+            self.presentViewController(incorrectCredentialsAlert, animated: true, completion: nil)
         }
-        
-        var index: Int = self.fieldArray.indexOfObject(textField)
-            if (index == NSNotFound || index + 1 == fieldArray.count) {
-                return false;
-            }
-        var nextField: AnyObject = fieldArray.objectAtIndex(index + 1)
-        nextField.becomeFirstResponder()
-        
-        return true;
-    }*/
+    }
     
     
+    
+    
+    /**
+    :brief:     Incomplete Function that verifies a user's credentials for signing in
+    :return:    Returns true if sign is successful, false otherwise
+    */
+    func verifyCredentialsForEmail(userEmail: String, withPassword userPassword: String) -> Bool {
+        return false;
+    }
+    
+    
+    
+    
+    /**
+    :brief:     Function that handles password recovery
+    :param:     userEmail       The email of the user in question
+    :param:     withPassword    The matching user's password
+    */
+    func sendPasswordRecoveryForEmail(userEmail: String, withPassword password: String) {
+        let emailSentAlert: UIAlertView = UIAlertView(title: "Password recovery email sent", message: "Please follow the link in your email to recover your password", delegate: nil, cancelButtonTitle: "Okay!")
+        emailSentAlert.show()
+    }
+    
+
+
+    @IBAction func userDidAskToCreateNewAccount(sender: UIButton) {
+        
+        let modalAccountCreationViewController: AccountCreationViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AccountCreationViewController") as AccountCreationViewController
+        self.presentViewController(modalAccountCreationViewController, animated: true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

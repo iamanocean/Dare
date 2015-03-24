@@ -22,6 +22,7 @@ class AccountCreationViewController: UIViewController {
         // Setup next buttons for email and new password text fields.
         emailAddressField.addTarget(newPasswordField, action: "becomeFirstResponder", forControlEvents: UIControlEvents.EditingDidEndOnExit)
         newPasswordField.addTarget(newPasswordConfirmationField, action: "becomeFirstResponder", forControlEvents: UIControlEvents.EditingDidEndOnExit)
+        newPasswordConfirmationField.addTarget(self, action: "createNewAccount", forControlEvents: UIControlEvents.EditingDidEndOnExit)
 
         // Do any additional setup after loading the view.
         // Set titles for outlets
@@ -73,7 +74,92 @@ class AccountCreationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    /**
+    :brief:     Incomplete function that Handles account creation, including verification 
+                of credentials and backend functionality
+    */
+    func createNewAccount() {
+        if verifyCredentialsForEmail(emailAddressField.text, forPassword: newPasswordField.text, withConfirmationPassword: newPasswordConfirmationField.text) {
+        // Go to the server and do magical things
+            
+        // ...
+           
+            let successFullAccountCreationAlertView: UIAlertView = UIAlertView(title: "Account Created!", message: "You are being returned to the sign in screen", delegate: nil, cancelButtonTitle: "Cool!")
+            successFullAccountCreationAlertView.show()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
+    
+    //////////////////////////Needs Completion///////////////////////////It would be neat if we could check for a valid email address, but otherwise it works as expected.
+    /**
+    :brief:     Verifies credentials for creation of a new account. Checks for matching 
+                passwords, and the existence of the email address in the database
+    :param:     userEmail                   The email address to create an account for
+    :param:     forPassword                 The proposed password
+    :param:     withConfirmationPassword    The verification password
+    :return:                                Returns true on success, false otherwise
+    */
+    
+    func verifyCredentialsForEmail(userEmail: String, forPassword password: String, withConfirmationPassword confirmPassword:String) -> Bool {
+        // ReassignFirstResponder to avoid awkward UI issues
+        self.newPasswordConfirmationField.resignFirstResponder()
+        self.becomeFirstResponder()
+        
+        
+        // Sets up the alert controllers using closures
+        let passwordsDoNotMatchAlertView: UIAlertView = UIAlertView(title: "Passwords Did Not Match", message: "Please try again", delegate: nil, cancelButtonTitle: "OK")
+        let accountIsAlreadyCreated: UIAlertController = UIAlertController(title: "Account is already created", message: "There is already an account for this email address.", preferredStyle: UIAlertControllerStyle.Alert)
+        accountIsAlreadyCreated.addAction(
+            UIAlertAction(title: "Log in", style: UIAlertActionStyle.Cancel, handler:
+                { (_) -> Void in
+                    self.dismissViewControllerAnimated(true , completion: nil)
+                }
+            )
+        )
+        accountIsAlreadyCreated.addAction(
+            UIAlertAction(title: "Recover Password", style: UIAlertActionStyle.Destructive, handler:
+                { (_) -> Void in
+                    self.recoverPasswordForUser(userEmail)
+                }
+            )
+        )
+        
+        if (password != confirmPassword) {
+            passwordsDoNotMatchAlertView.show()
+            return false;
+        } else if (self.accountAlreadyExistsForEmail(userEmail)) {
+            
+            self.presentViewController(accountIsAlreadyCreated, animated: true, completion: nil)
+            return false;
+        }
+        
+        return true;
+    }
+    
+    
+    //////////////////////////Needs Completion///////////////////////////This needs to implemented from the ground up
+    /**
+    :brief:     Checks if an account for an email already exists
+    :param:     userEmail       The email to be checked
+    :return:    Returns true if an account already exists for userEmail, false otherwise
+    */
+    func accountAlreadyExistsForEmail(userEmail: String) -> Bool {
+        return false;
+    }
+    
+    
+    //////////////////////////Needs Completion///////////////////////////Still needs to send an email, or at least let the server know, or something, I don't know.
+    /**
+    :brief:     Sends the user a password recovery email, and notifies them of this
+    :param:     userEmail       The email to be notified
+    */
+    func recoverPasswordForUser(userEmail: String) {
+        let emailSentAlert: UIAlertView = UIAlertView(title: "Password recovery email sent", message: "Please follow the link in your email to recover your password", delegate: nil, cancelButtonTitle: "Okay!")
+        emailSentAlert.show()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
