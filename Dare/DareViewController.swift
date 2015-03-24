@@ -23,7 +23,6 @@ class DareViewController: UIViewController {
             self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.blackColor()]
         }        
         self.view.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.956, alpha: 1)
-
     }
 
     override func didReceiveMemoryWarning() {

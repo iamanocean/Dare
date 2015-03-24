@@ -17,6 +17,7 @@ class DareTabBarViewController: UITabBarController {
         
         // Set title, colors, and typefaces see SignInViewController for detailed description
         self.view.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.956, alpha: 1)
+        let tabBar = self.tabBarController?.tabBar
     }
 
     override func didReceiveMemoryWarning() {

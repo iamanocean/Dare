@@ -16,7 +16,6 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     
         // Set title, colors, and typefaces see SignInViewController for detailed description
-        self.title = "PROFILE"
         let font = UIFont(name: "BebasNeueRegular", size: 38)
         if let font = font {
             self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.blackColor()]

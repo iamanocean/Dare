@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D113c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jA5-c8-uej">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="65" id="LhE-a0-Do3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mail@address.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dzT-X5-drr">
@@ -140,8 +140,59 @@
                     <view key="view" contentMode="scaleToFill" id="vxb-Va-Nx9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMm-7d-SYD">
+                                <rect key="frame" x="16" y="86" width="42" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="bwg-JH-kK7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkn-RF-GrX">
+                                <rect key="frame" x="16" y="161" width="563" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="134" id="AYF-sa-Qvt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AC7-4n-Piz">
+                                <rect key="frame" x="0.0" y="363" width="600" height="180"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ey4-Ka-ZKQ">
+                                <rect key="frame" x="16" y="303" width="42" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="uSu-Bu-VT4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rkn-RF-GrX" firstAttribute="leading" secondItem="ey4-Ka-ZKQ" secondAttribute="leading" id="Csw-Pf-pAd"/>
+                            <constraint firstItem="BMm-7d-SYD" firstAttribute="top" secondItem="Tld-Oe-VMp" secondAttribute="bottom" constant="22" id="J2o-2I-PRM"/>
+                            <constraint firstItem="rkn-RF-GrX" firstAttribute="top" secondItem="BMm-7d-SYD" secondAttribute="bottom" constant="8" symbolic="YES" id="JUg-Lk-j3k"/>
+                            <constraint firstItem="rkn-RF-GrX" firstAttribute="leading" secondItem="BMm-7d-SYD" secondAttribute="leading" id="O8t-rz-tnR"/>
+                            <constraint firstItem="T7l-Ml-Nyt" firstAttribute="top" secondItem="AC7-4n-Piz" secondAttribute="bottom" constant="8" symbolic="YES" id="SPi-e8-DLn"/>
+                            <constraint firstItem="ey4-Ka-ZKQ" firstAttribute="top" secondItem="rkn-RF-GrX" secondAttribute="bottom" constant="8" symbolic="YES" id="Sw3-l5-3hM"/>
+                            <constraint firstItem="AC7-4n-Piz" firstAttribute="top" secondItem="ey4-Ka-ZKQ" secondAttribute="bottom" constant="15" id="UwO-Zd-KRt"/>
+                            <constraint firstAttribute="trailing" secondItem="AC7-4n-Piz" secondAttribute="trailing" id="VuK-xA-ErR"/>
+                            <constraint firstItem="rkn-RF-GrX" firstAttribute="leading" secondItem="vxb-Va-Nx9" secondAttribute="leadingMargin" id="lEP-r8-aKm"/>
+                            <constraint firstItem="AC7-4n-Piz" firstAttribute="leading" secondItem="vxb-Va-Nx9" secondAttribute="leading" id="saa-eh-DoK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rkn-RF-GrX" secondAttribute="trailing" constant="5" id="ubj-B9-af7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="darePickerView" destination="AC7-4n-Piz" id="mPq-rN-WUE"/>
+                        <outlet property="dateLabel" destination="ey4-Ka-ZKQ" id="AcY-PG-zSm"/>
+                        <outlet property="descriptionLabel" destination="rkn-RF-GrX" id="Z1O-Ny-ssj"/>
+                        <outlet property="titleLabel" destination="BMm-7d-SYD" id="aFm-0S-rHz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EM-s9-Tyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,7 +259,7 @@
                                     <constraint firstAttribute="width" constant="214" id="qYk-sc-i4a"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
