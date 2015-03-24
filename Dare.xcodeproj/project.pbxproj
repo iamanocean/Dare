@@ -14,12 +14,16 @@
 		BF288AE11A86F5060028E22A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF288AE01A86F5060028E22A /* Images.xcassets */; };
 		BF288AE41A86F5060028E22A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF288AE21A86F5060028E22A /* LaunchScreen.xib */; };
 		BF288AF01A86F5060028E22A /* DareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288AEF1A86F5060028E22A /* DareTests.swift */; };
+		BF9F4D101AC0EE35004A57FB /* DareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F4D0F1AC0EE35004A57FB /* DareViewController.swift */; };
+		BF9F4D121AC0EF9C004A57FB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F4D111AC0EF9C004A57FB /* ProfileViewController.swift */; };
+		BF9F4D151AC0F5BA004A57FB /* DareCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F4D141AC0F5BA004A57FB /* DareCreationViewController.swift */; };
 		BFF8A29C1AC09F270097518F /* BebasNeue Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2961AC095030097518F /* BebasNeue Bold.otf */; };
 		BFF8A29D1AC09F270097518F /* BebasNeue Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2971AC095030097518F /* BebasNeue Book.otf */; };
 		BFF8A29E1AC09F270097518F /* BebasNeue Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2981AC095030097518F /* BebasNeue Light.otf */; };
 		BFF8A29F1AC09F270097518F /* BebasNeue Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2991AC095030097518F /* BebasNeue Regular.otf */; };
 		BFF8A2A01AC09F270097518F /* BebasNeue Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A29A1AC095030097518F /* BebasNeue Thin.otf */; };
 		BFF8A2A21AC0A8380097518F /* AccountCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */; };
+		BFF8A2A41AC0EA8D0097518F /* DareTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8A2A31AC0EA8D0097518F /* DareTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +48,16 @@
 		BF288AE91A86F5060028E22A /* DareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF288AEE1A86F5060028E22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF288AEF1A86F5060028E22A /* DareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DareTests.swift; sourceTree = "<group>"; };
+		BF9F4D0F1AC0EE35004A57FB /* DareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DareViewController.swift; sourceTree = "<group>"; };
+		BF9F4D111AC0EF9C004A57FB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BF9F4D141AC0F5BA004A57FB /* DareCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DareCreationViewController.swift; sourceTree = "<group>"; };
 		BFF8A2961AC095030097518F /* BebasNeue Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Bold.otf"; sourceTree = "<group>"; };
 		BFF8A2971AC095030097518F /* BebasNeue Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Book.otf"; sourceTree = "<group>"; };
 		BFF8A2981AC095030097518F /* BebasNeue Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Light.otf"; sourceTree = "<group>"; };
 		BFF8A2991AC095030097518F /* BebasNeue Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Regular.otf"; sourceTree = "<group>"; };
 		BFF8A29A1AC095030097518F /* BebasNeue Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Thin.otf"; sourceTree = "<group>"; };
 		BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreationViewController.swift; sourceTree = "<group>"; };
+		BFF8A2A31AC0EA8D0097518F /* DareTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DareTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,10 @@
 				BF288AD61A86F5060028E22A /* AppDelegate.swift */,
 				BF288ADB1A86F5060028E22A /* SignInViewController.swift */,
 				BF288ADD1A86F5060028E22A /* Main.storyboard */,
+				BF9F4D141AC0F5BA004A57FB /* DareCreationViewController.swift */,
+				BF9F4D111AC0EF9C004A57FB /* ProfileViewController.swift */,
+				BF9F4D0F1AC0EE35004A57FB /* DareViewController.swift */,
+				BFF8A2A31AC0EA8D0097518F /* DareTabBarViewController.swift */,
 				BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */,
 				BF288AE01A86F5060028E22A /* Images.xcassets */,
 				BF288AE21A86F5060028E22A /* LaunchScreen.xib */,
@@ -238,9 +250,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9F4D101AC0EE35004A57FB /* DareViewController.swift in Sources */,
 				BF288ADC1A86F5060028E22A /* SignInViewController.swift in Sources */,
+				BFF8A2A41AC0EA8D0097518F /* DareTabBarViewController.swift in Sources */,
 				BF288AD71A86F5060028E22A /* AppDelegate.swift in Sources */,
+				BF9F4D121AC0EF9C004A57FB /* ProfileViewController.swift in Sources */,
 				BF288ADA1A86F5060028E22A /* Dare.xcdatamodeld in Sources */,
+				BF9F4D151AC0F5BA004A57FB /* DareCreationViewController.swift in Sources */,
 				BFF8A2A21AC0A8380097518F /* AccountCreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

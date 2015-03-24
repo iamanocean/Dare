@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+/**
+Also nearly complete, needs some backend support
+*/
 class AccountCreationViewController: UIViewController {
     
     // View outlets
@@ -49,6 +51,9 @@ class AccountCreationViewController: UIViewController {
 
     }
 
+    
+    
+    
     /**
     :brief:     Overrode viewDidAppear to allow autohiding the keyboard
     :param:     animated        A boolean to indicate whether or not the views appearance is animated
@@ -61,6 +66,9 @@ class AccountCreationViewController: UIViewController {
         self.view.addGestureRecognizer(tapRecognizer)
     }
 
+    
+    
+    
     /**
     :brief:     Helper method used to autohide the keyboard when a user taps on the screen
     :param:     recognizer      A UITapGestureRecognizer to respond to.
@@ -69,10 +77,18 @@ class AccountCreationViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
     
     /**
     :brief:     Incomplete function that Handles account creation, including verification 
@@ -89,6 +105,8 @@ class AccountCreationViewController: UIViewController {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
+    
+    
     
     
     //////////////////////////Needs Completion///////////////////////////It would be neat if we could check for a valid email address, but otherwise it works as expected.
@@ -138,6 +156,8 @@ class AccountCreationViewController: UIViewController {
     }
     
     
+    
+    
     //////////////////////////Needs Completion///////////////////////////This needs to implemented from the ground up
     /**
     :brief:     Checks if an account for an email already exists
@@ -147,6 +167,8 @@ class AccountCreationViewController: UIViewController {
     func accountAlreadyExistsForEmail(userEmail: String) -> Bool {
         return false;
     }
+    
+    
     
     
     //////////////////////////Needs Completion///////////////////////////Still needs to send an email, or at least let the server know, or something, I don't know.

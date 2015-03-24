@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+/**
+This view controller is nearly complete in terms of front end development, back end still needs implementation
+*/
 class SignInViewController: UIViewController {
 
     
@@ -90,6 +92,8 @@ class SignInViewController: UIViewController {
     func signIn() {
         let passwordRecoveryNecessary: Bool = false;
         if verifyCredentialsForEmail(emailTextField.text, withPassword: passwordTextField.text) {
+            let mainViewController: DareTabBarViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DareTabBarViewController") as DareTabBarViewController
+            self.presentViewController(mainViewController, animated: true, completion: nil)
             
         } else {
             let incorrectCredentialsAlert: UIAlertController = UIAlertController(title: "Incorrect Credentials", message: "Incorrect email or password provided", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -116,7 +120,7 @@ class SignInViewController: UIViewController {
     :return:    Returns true if sign is successful, false otherwise
     */
     func verifyCredentialsForEmail(userEmail: String, withPassword userPassword: String) -> Bool {
-        return false;
+        return true;
     }
     
     
@@ -139,6 +143,9 @@ class SignInViewController: UIViewController {
         let modalAccountCreationViewController: AccountCreationViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AccountCreationViewController") as AccountCreationViewController
         self.presentViewController(modalAccountCreationViewController, animated: true, completion: nil)
     }
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

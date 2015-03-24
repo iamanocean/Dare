@@ -82,6 +82,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="90B-Xn-n7k">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="Hyj-EG-qm5" customClass="ProfileViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VN1-9f-QcM"/>
+                        <viewControllerLayoutGuide type="bottom" id="x7T-D7-ewZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kGX-QX-qua" customClass="Prof">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="orR-PQ-4V4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dXu-s7-uLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2920" y="731"/>
+        </scene>
+        <!--Dare View Controller-->
+        <scene sceneID="cPC-QC-yQa">
+            <objects>
+                <viewController storyboardIdentifier="DareViewController" id="7AB-MG-Yyj" customClass="DareViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GPi-Ah-HxD"/>
+                        <viewControllerLayoutGuide type="bottom" id="v9q-yx-GCO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a0a-mW-TYQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vff-NV-mGH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wwb-f3-gEl">
+                            <connections>
+                                <segue destination="ct9-rw-bfz" kind="show" id="oMF-eu-L5Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="daresTabBarItem" destination="Wif-wN-X0V" id="waO-aP-ycd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUN-2T-OQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2920" y="69"/>
+        </scene>
+        <!--Dare Creation View Controller-->
+        <scene sceneID="t97-0b-Dsw">
+            <objects>
+                <viewController id="ct9-rw-bfz" customClass="DareCreationViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tld-Oe-VMp"/>
+                        <viewControllerLayoutGuide type="bottom" id="T7l-Ml-Nyt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vxb-Va-Nx9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4EM-s9-Tyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3846" y="69"/>
+        </scene>
+        <!--Dare Tab Bar View Controller-->
+        <scene sceneID="itc-hI-xx7">
+            <objects>
+                <tabBarController storyboardIdentifier="DareTabBarViewController" id="jA5-c8-uej" customClass="DareTabBarViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yK2-rJ-7zY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="4Eu-4p-ZnM" kind="relationship" relationship="viewControllers" id="EvB-CH-HNc"/>
+                        <segue destination="gOQ-fK-Bfz" kind="relationship" relationship="viewControllers" id="z4Q-uD-PFS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0b-Jo-zgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1288" y="399"/>
+        </scene>
         <!--Account Creation View Controller-->
         <scene sceneID="bAc-qh-cBg">
             <objects>
@@ -153,7 +237,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFI-RU-RA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273" y="328"/>
+            <point key="canvasLocation" x="460" y="1136"/>
+        </scene>
+        <!--Dares-->
+        <scene sceneID="lV6-6W-91F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Eu-4p-ZnM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Dares" id="Wif-wN-X0V"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bia-Q7-6Zu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7AB-MG-Yyj" kind="relationship" relationship="rootViewController" id="6Ph-yC-umh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nxZ-PU-XEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2108" y="69"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="bfZ-1G-ccn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gOQ-fK-Bfz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="MvD-26-XsU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vx3-hd-BKt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hyj-EG-qm5" kind="relationship" relationship="rootViewController" id="WS3-Vw-G8P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2BD-9n-ad0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2108" y="731"/>
         </scene>
     </scenes>
 </document>
