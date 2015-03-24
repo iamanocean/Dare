@@ -81,6 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="417" y="151"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="90B-Xn-n7k">
@@ -90,7 +91,7 @@
                         <viewControllerLayoutGuide type="top" id="VN1-9f-QcM"/>
                         <viewControllerLayoutGuide type="bottom" id="x7T-D7-ewZ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kGX-QX-qua" customClass="Prof">
+                    <view key="view" contentMode="scaleToFill" id="kGX-QX-qua">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,33 +102,40 @@
             </objects>
             <point key="canvasLocation" x="2920" y="731"/>
         </scene>
-        <!--Dare View Controller-->
-        <scene sceneID="cPC-QC-yQa">
+        <!--Dare Table View Controller-->
+        <scene sceneID="dbM-yb-v2q">
             <objects>
-                <viewController storyboardIdentifier="DareViewController" id="7AB-MG-Yyj" customClass="DareViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GPi-Ah-HxD"/>
-                        <viewControllerLayoutGuide type="bottom" id="v9q-yx-GCO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="a0a-mW-TYQ">
+                <tableViewController id="ydz-9c-CjM" customClass="DareTableViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="168" sectionHeaderHeight="22" sectionFooterHeight="22" id="bpx-ye-4f7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vff-NV-mGH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wwb-f3-gEl">
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="168" id="1Da-hJ-D8f">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Da-hJ-D8f" id="CMa-SD-ZPd">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ydz-9c-CjM" id="yja-7c-Nqj"/>
+                            <outlet property="delegate" destination="ydz-9c-CjM" id="Hr6-Al-rks"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="F3y-Da-V89">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bG4-si-05P">
                             <connections>
-                                <segue destination="ct9-rw-bfz" kind="show" id="oMF-eu-L5Z"/>
+                                <segue destination="ct9-rw-bfz" kind="show" id="NxN-O2-9yb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="daresTabBarItem" destination="Wif-wN-X0V" id="waO-aP-ycd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BUN-2T-OQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4OE-oG-Bt6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2920" y="69"/>
+            <point key="canvasLocation" x="2920" y="-45"/>
         </scene>
         <!--Dare Creation View Controller-->
         <scene sceneID="t97-0b-Dsw">
@@ -144,7 +152,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMm-7d-SYD">
                                 <rect key="frame" x="16" y="86" width="42" height="67"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="bwg-JH-kK7"/>
+                                    <constraint firstAttribute="height" constant="67" id="3xl-ZU-AVd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -153,7 +161,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkn-RF-GrX">
                                 <rect key="frame" x="16" y="161" width="563" height="134"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="134" id="AYF-sa-Qvt"/>
+                                    <constraint firstAttribute="height" constant="134" id="au0-mC-4ub"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -165,7 +173,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ey4-Ka-ZKQ">
                                 <rect key="frame" x="16" y="303" width="42" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="uSu-Bu-VT4"/>
+                                    <constraint firstAttribute="height" constant="45" id="hrU-iB-rrp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -174,17 +182,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rkn-RF-GrX" firstAttribute="leading" secondItem="ey4-Ka-ZKQ" secondAttribute="leading" id="Csw-Pf-pAd"/>
-                            <constraint firstItem="BMm-7d-SYD" firstAttribute="top" secondItem="Tld-Oe-VMp" secondAttribute="bottom" constant="22" id="J2o-2I-PRM"/>
-                            <constraint firstItem="rkn-RF-GrX" firstAttribute="top" secondItem="BMm-7d-SYD" secondAttribute="bottom" constant="8" symbolic="YES" id="JUg-Lk-j3k"/>
-                            <constraint firstItem="rkn-RF-GrX" firstAttribute="leading" secondItem="BMm-7d-SYD" secondAttribute="leading" id="O8t-rz-tnR"/>
-                            <constraint firstItem="T7l-Ml-Nyt" firstAttribute="top" secondItem="AC7-4n-Piz" secondAttribute="bottom" constant="8" symbolic="YES" id="SPi-e8-DLn"/>
-                            <constraint firstItem="ey4-Ka-ZKQ" firstAttribute="top" secondItem="rkn-RF-GrX" secondAttribute="bottom" constant="8" symbolic="YES" id="Sw3-l5-3hM"/>
-                            <constraint firstItem="AC7-4n-Piz" firstAttribute="top" secondItem="ey4-Ka-ZKQ" secondAttribute="bottom" constant="15" id="UwO-Zd-KRt"/>
-                            <constraint firstAttribute="trailing" secondItem="AC7-4n-Piz" secondAttribute="trailing" id="VuK-xA-ErR"/>
-                            <constraint firstItem="rkn-RF-GrX" firstAttribute="leading" secondItem="vxb-Va-Nx9" secondAttribute="leadingMargin" id="lEP-r8-aKm"/>
-                            <constraint firstItem="AC7-4n-Piz" firstAttribute="leading" secondItem="vxb-Va-Nx9" secondAttribute="leading" id="saa-eh-DoK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rkn-RF-GrX" secondAttribute="trailing" constant="5" id="ubj-B9-af7"/>
+                            <constraint firstItem="AC7-4n-Piz" firstAttribute="leading" secondItem="vxb-Va-Nx9" secondAttribute="leading" id="68e-mk-v3U"/>
+                            <constraint firstItem="rkn-RF-GrX" firstAttribute="leading" secondItem="BMm-7d-SYD" secondAttribute="leading" id="L1r-UV-ZOd"/>
+                            <constraint firstItem="rkn-RF-GrX" firstAttribute="leading" secondItem="ey4-Ka-ZKQ" secondAttribute="leading" id="NrC-eS-Wlq"/>
+                            <constraint firstItem="BMm-7d-SYD" firstAttribute="top" secondItem="Tld-Oe-VMp" secondAttribute="bottom" constant="22" id="PAp-ol-8aG"/>
+                            <constraint firstItem="ey4-Ka-ZKQ" firstAttribute="leading" secondItem="vxb-Va-Nx9" secondAttribute="leadingMargin" id="cju-Tr-elb"/>
+                            <constraint firstItem="T7l-Ml-Nyt" firstAttribute="top" secondItem="AC7-4n-Piz" secondAttribute="bottom" constant="13" id="e0t-ea-uO4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rkn-RF-GrX" secondAttribute="trailing" constant="5" id="erg-t3-YJL"/>
+                            <constraint firstItem="rkn-RF-GrX" firstAttribute="top" secondItem="BMm-7d-SYD" secondAttribute="bottom" constant="8" symbolic="YES" id="iGa-M9-kmY"/>
+                            <constraint firstAttribute="trailing" secondItem="AC7-4n-Piz" secondAttribute="trailing" id="mYe-Rq-X9L"/>
+                            <constraint firstItem="AC7-4n-Piz" firstAttribute="top" secondItem="ey4-Ka-ZKQ" secondAttribute="bottom" constant="15" id="s1f-Uu-nan"/>
+                            <constraint firstItem="ey4-Ka-ZKQ" firstAttribute="top" secondItem="rkn-RF-GrX" secondAttribute="bottom" constant="8" symbolic="YES" id="yei-6V-akN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -196,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EM-s9-Tyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3846" y="69"/>
+            <point key="canvasLocation" x="3760" y="-45"/>
         </scene>
         <!--Dare Tab Bar View Controller-->
         <scene sceneID="itc-hI-xx7">
@@ -209,13 +217,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4Eu-4p-ZnM" kind="relationship" relationship="viewControllers" id="EvB-CH-HNc"/>
-                        <segue destination="gOQ-fK-Bfz" kind="relationship" relationship="viewControllers" id="z4Q-uD-PFS"/>
+                        <segue destination="K2B-f8-dCL" kind="relationship" relationship="viewControllers" id="xYf-b5-7wG"/>
+                        <segue destination="gOQ-fK-Bfz" kind="relationship" relationship="viewControllers" id="7UP-jD-tZe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0b-Jo-zgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1288" y="399"/>
+            <point key="canvasLocation" x="1242" y="399"/>
         </scene>
         <!--Account Creation View Controller-->
         <scene sceneID="bAc-qh-cBg">
@@ -290,25 +298,6 @@
             </objects>
             <point key="canvasLocation" x="460" y="1136"/>
         </scene>
-        <!--Dares-->
-        <scene sceneID="lV6-6W-91F">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Eu-4p-ZnM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dares" id="Wif-wN-X0V"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bia-Q7-6Zu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7AB-MG-Yyj" kind="relationship" relationship="rootViewController" id="6Ph-yC-umh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nxZ-PU-XEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2108" y="69"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="bfZ-1G-ccn">
             <objects>
@@ -327,6 +316,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BD-9n-ad0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2108" y="731"/>
+        </scene>
+        <!--Dares-->
+        <scene sceneID="l9q-bq-FHi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K2B-f8-dCL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Dares" id="R0w-sU-HPz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xzW-hw-9Hz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ydz-9c-CjM" kind="relationship" relationship="rootViewController" id="Kwm-52-yb2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4BO-3Q-g36" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2108" y="-45"/>
         </scene>
     </scenes>
 </document>
