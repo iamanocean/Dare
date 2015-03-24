@@ -17,6 +17,10 @@
 		BF9F4D121AC0EF9C004A57FB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F4D111AC0EF9C004A57FB /* ProfileViewController.swift */; };
 		BF9F4D151AC0F5BA004A57FB /* DareCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F4D141AC0F5BA004A57FB /* DareCreationViewController.swift */; };
 		BFF7F3091AC1EE1A00A0CD13 /* DareTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7F3081AC1EE1A00A0CD13 /* DareTableViewController.swift */; };
+		BFF7F30B1AC1F97900A0CD13 /* DareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF7F30A1AC1F97900A0CD13 /* DareTableViewCell.xib */; };
+		BFF7F3171AC2033800A0CD13 /* swift 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFF7F3161AC2033800A0CD13 /* swift 3.jpg */; };
+		BFF7F3191AC20B3100A0CD13 /* swift 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFF7F3181AC20B3100A0CD13 /* swift 1.jpg */; };
+		BFF7F31B1AC20B7F00A0CD13 /* swift 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFF7F31A1AC20B7F00A0CD13 /* swift 2.jpg */; };
 		BFF8A29C1AC09F270097518F /* BebasNeue Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2961AC095030097518F /* BebasNeue Bold.otf */; };
 		BFF8A29D1AC09F270097518F /* BebasNeue Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2971AC095030097518F /* BebasNeue Book.otf */; };
 		BFF8A29E1AC09F270097518F /* BebasNeue Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2981AC095030097518F /* BebasNeue Light.otf */; };
@@ -51,6 +55,10 @@
 		BF9F4D111AC0EF9C004A57FB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BF9F4D141AC0F5BA004A57FB /* DareCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DareCreationViewController.swift; sourceTree = "<group>"; };
 		BFF7F3081AC1EE1A00A0CD13 /* DareTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DareTableViewController.swift; sourceTree = "<group>"; };
+		BFF7F30A1AC1F97900A0CD13 /* DareTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DareTableViewCell.xib; sourceTree = "<group>"; };
+		BFF7F3161AC2033800A0CD13 /* swift 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "swift 3.jpg"; sourceTree = "<group>"; };
+		BFF7F3181AC20B3100A0CD13 /* swift 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "swift 1.jpg"; sourceTree = "<group>"; };
+		BFF7F31A1AC20B7F00A0CD13 /* swift 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "swift 2.jpg"; sourceTree = "<group>"; };
 		BFF8A2961AC095030097518F /* BebasNeue Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Bold.otf"; sourceTree = "<group>"; };
 		BFF8A2971AC095030097518F /* BebasNeue Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Book.otf"; sourceTree = "<group>"; };
 		BFF8A2981AC095030097518F /* BebasNeue Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Light.otf"; sourceTree = "<group>"; };
@@ -111,6 +119,7 @@
 				BF288AE21A86F5060028E22A /* LaunchScreen.xib */,
 				BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */,
 				BF288AD41A86F5060028E22A /* Supporting Files */,
+				BFF7F30A1AC1F97900A0CD13 /* DareTableViewCell.xib */,
 			);
 			path = Dare;
 			sourceTree = "<group>";
@@ -118,6 +127,9 @@
 		BF288AD41A86F5060028E22A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BFF7F3181AC20B3100A0CD13 /* swift 1.jpg */,
+				BFF7F31A1AC20B7F00A0CD13 /* swift 2.jpg */,
+				BFF7F3161AC2033800A0CD13 /* swift 3.jpg */,
 				BFF8A2961AC095030097518F /* BebasNeue Bold.otf */,
 				BFF8A2971AC095030097518F /* BebasNeue Book.otf */,
 				BFF8A2981AC095030097518F /* BebasNeue Light.otf */,
@@ -226,13 +238,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFF8A29C1AC09F270097518F /* BebasNeue Bold.otf in Resources */,
+				BFF7F30B1AC1F97900A0CD13 /* DareTableViewCell.xib in Resources */,
 				BFF8A29D1AC09F270097518F /* BebasNeue Book.otf in Resources */,
 				BFF8A29E1AC09F270097518F /* BebasNeue Light.otf in Resources */,
+				BFF7F3191AC20B3100A0CD13 /* swift 1.jpg in Resources */,
 				BFF8A29F1AC09F270097518F /* BebasNeue Regular.otf in Resources */,
 				BFF8A2A01AC09F270097518F /* BebasNeue Thin.otf in Resources */,
 				BF288ADF1A86F5060028E22A /* Main.storyboard in Resources */,
+				BFF7F3171AC2033800A0CD13 /* swift 3.jpg in Resources */,
 				BF288AE41A86F5060028E22A /* LaunchScreen.xib in Resources */,
 				BF288AE11A86F5060028E22A /* Images.xcassets in Resources */,
+				BFF7F31B1AC20B7F00A0CD13 /* swift 2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
