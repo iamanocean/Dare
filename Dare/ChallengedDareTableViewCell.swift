@@ -1,0 +1,54 @@
+//
+//  ChallengedDareTableViewCell.swift
+//  Dare
+//
+//  Created by Louis Olivas on 3/25/15.
+//  Copyright (c) 2015 Louis Olivas. All rights reserved.
+//
+
+import UIKit
+
+class ChallengedDareTableViewCell: UITableViewCell {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var bountyLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var upVoteButton: UIButton!
+    @IBAction func userDidUpVoteDare(sender: UIButton) {
+    }
+    
+    func loadItem(#title: String, location: String, date: String, bounty: String) {
+        let font = UIFont(name: "BebasNeueRegular", size: 36)
+        if let font = font {
+            titleLabel.font = font
+            titleLabel.text = title
+        }
+        let helveticaFont = UIFont(name: "HelveticaNeue-Light", size: 20)
+        if let helveticaFont = helveticaFont {
+            locationLabel.text = location
+            locationLabel.font = helveticaFont
+            
+            bountyLabel.text = bounty
+            bountyLabel.font = helveticaFont
+            bountyLabel.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+            
+            dateLabel.font = helveticaFont
+            dateLabel.text = date
+            dateLabel.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+        }
+        self.backgroundColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.3)
+
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}

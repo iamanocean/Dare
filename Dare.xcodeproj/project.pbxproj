@@ -16,11 +16,19 @@
 		BF288AF01A86F5060028E22A /* DareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288AEF1A86F5060028E22A /* DareTests.swift */; };
 		BF9F4D121AC0EF9C004A57FB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F4D111AC0EF9C004A57FB /* ProfileViewController.swift */; };
 		BF9F4D151AC0F5BA004A57FB /* DareCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F4D141AC0F5BA004A57FB /* DareCreationViewController.swift */; };
+		BFB0BDF01AC34F41008E4B29 /* ChallengedDareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0BDEE1AC34F41008E4B29 /* ChallengedDareTableViewCell.swift */; };
+		BFB0BDF11AC34F41008E4B29 /* ChallengedDareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB0BDEF1AC34F41008E4B29 /* ChallengedDareTableViewCell.xib */; };
+		BFB0BDF31AC36D4F008E4B29 /* CompletedDareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB0BDF21AC36D4F008E4B29 /* CompletedDareDetailViewController.swift */; };
+		BFF207261AC33F3100CB8592 /* CompletedDareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF207241AC33F3100CB8592 /* CompletedDareTableViewCell.swift */; };
+		BFF207271AC33F3100CB8592 /* CompletedDareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF207251AC33F3100CB8592 /* CompletedDareTableViewCell.xib */; };
+		BFF2072A1AC342C600CB8592 /* InProgressDareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF207281AC342C600CB8592 /* InProgressDareTableViewCell.swift */; };
+		BFF2072B1AC342C600CB8592 /* InProgressDareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF207291AC342C600CB8592 /* InProgressDareTableViewCell.xib */; };
 		BFF7F3091AC1EE1A00A0CD13 /* DareTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7F3081AC1EE1A00A0CD13 /* DareTableViewController.swift */; };
-		BFF7F30B1AC1F97900A0CD13 /* DareTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF7F30A1AC1F97900A0CD13 /* DareTableViewCell.xib */; };
 		BFF7F3171AC2033800A0CD13 /* swift 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFF7F3161AC2033800A0CD13 /* swift 3.jpg */; };
 		BFF7F3191AC20B3100A0CD13 /* swift 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFF7F3181AC20B3100A0CD13 /* swift 1.jpg */; };
 		BFF7F31B1AC20B7F00A0CD13 /* swift 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFF7F31A1AC20B7F00A0CD13 /* swift 2.jpg */; };
+		BFF7F31D1AC2120100A0CD13 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7F31C1AC2120100A0CD13 /* SettingsViewController.swift */; };
+		BFF7F31F1AC2132C00A0CD13 /* ProfilePictureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7F31E1AC2132C00A0CD13 /* ProfilePictureButton.swift */; };
 		BFF8A29C1AC09F270097518F /* BebasNeue Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2961AC095030097518F /* BebasNeue Bold.otf */; };
 		BFF8A29D1AC09F270097518F /* BebasNeue Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2971AC095030097518F /* BebasNeue Book.otf */; };
 		BFF8A29E1AC09F270097518F /* BebasNeue Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A2981AC095030097518F /* BebasNeue Light.otf */; };
@@ -54,11 +62,19 @@
 		BF288AEF1A86F5060028E22A /* DareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DareTests.swift; sourceTree = "<group>"; };
 		BF9F4D111AC0EF9C004A57FB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BF9F4D141AC0F5BA004A57FB /* DareCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DareCreationViewController.swift; sourceTree = "<group>"; };
+		BFB0BDEE1AC34F41008E4B29 /* ChallengedDareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengedDareTableViewCell.swift; sourceTree = "<group>"; };
+		BFB0BDEF1AC34F41008E4B29 /* ChallengedDareTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChallengedDareTableViewCell.xib; sourceTree = "<group>"; };
+		BFB0BDF21AC36D4F008E4B29 /* CompletedDareDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedDareDetailViewController.swift; sourceTree = "<group>"; };
+		BFF207241AC33F3100CB8592 /* CompletedDareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompletedDareTableViewCell.swift; path = ../CompletedDareTableViewCell.swift; sourceTree = "<group>"; };
+		BFF207251AC33F3100CB8592 /* CompletedDareTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CompletedDareTableViewCell.xib; path = ../CompletedDareTableViewCell.xib; sourceTree = "<group>"; };
+		BFF207281AC342C600CB8592 /* InProgressDareTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InProgressDareTableViewCell.swift; sourceTree = "<group>"; };
+		BFF207291AC342C600CB8592 /* InProgressDareTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InProgressDareTableViewCell.xib; sourceTree = "<group>"; };
 		BFF7F3081AC1EE1A00A0CD13 /* DareTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DareTableViewController.swift; sourceTree = "<group>"; };
-		BFF7F30A1AC1F97900A0CD13 /* DareTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DareTableViewCell.xib; sourceTree = "<group>"; };
 		BFF7F3161AC2033800A0CD13 /* swift 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "swift 3.jpg"; sourceTree = "<group>"; };
 		BFF7F3181AC20B3100A0CD13 /* swift 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "swift 1.jpg"; sourceTree = "<group>"; };
 		BFF7F31A1AC20B7F00A0CD13 /* swift 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "swift 2.jpg"; sourceTree = "<group>"; };
+		BFF7F31C1AC2120100A0CD13 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BFF7F31E1AC2132C00A0CD13 /* ProfilePictureButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePictureButton.swift; sourceTree = "<group>"; };
 		BFF8A2961AC095030097518F /* BebasNeue Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Bold.otf"; sourceTree = "<group>"; };
 		BFF8A2971AC095030097518F /* BebasNeue Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Book.otf"; sourceTree = "<group>"; };
 		BFF8A2981AC095030097518F /* BebasNeue Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Light.otf"; sourceTree = "<group>"; };
@@ -107,19 +123,27 @@
 		BF288AD31A86F5060028E22A /* Dare */ = {
 			isa = PBXGroup;
 			children = (
+				BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */,
 				BF288AD61A86F5060028E22A /* AppDelegate.swift */,
+				BFF207241AC33F3100CB8592 /* CompletedDareTableViewCell.swift */,
+				BFF7F3081AC1EE1A00A0CD13 /* DareTableViewController.swift */,
+				BFF8A2A31AC0EA8D0097518F /* DareTabBarViewController.swift */,
+				BF9F4D141AC0F5BA004A57FB /* DareCreationViewController.swift */,
+				BFF207281AC342C600CB8592 /* InProgressDareTableViewCell.swift */,
+				BFF7F31E1AC2132C00A0CD13 /* ProfilePictureButton.swift */,
+				BF9F4D111AC0EF9C004A57FB /* ProfileViewController.swift */,
+				BFF7F31C1AC2120100A0CD13 /* SettingsViewController.swift */,
 				BF288ADB1A86F5060028E22A /* SignInViewController.swift */,
 				BF288ADD1A86F5060028E22A /* Main.storyboard */,
-				BFF7F3081AC1EE1A00A0CD13 /* DareTableViewController.swift */,
-				BF9F4D141AC0F5BA004A57FB /* DareCreationViewController.swift */,
-				BF9F4D111AC0EF9C004A57FB /* ProfileViewController.swift */,
-				BFF8A2A31AC0EA8D0097518F /* DareTabBarViewController.swift */,
-				BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */,
+				BFB0BDF21AC36D4F008E4B29 /* CompletedDareDetailViewController.swift */,
+				BFF207251AC33F3100CB8592 /* CompletedDareTableViewCell.xib */,
+				BFF207291AC342C600CB8592 /* InProgressDareTableViewCell.xib */,
+				BFB0BDEE1AC34F41008E4B29 /* ChallengedDareTableViewCell.swift */,
+				BFB0BDEF1AC34F41008E4B29 /* ChallengedDareTableViewCell.xib */,
 				BF288AE01A86F5060028E22A /* Images.xcassets */,
 				BF288AE21A86F5060028E22A /* LaunchScreen.xib */,
 				BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */,
 				BF288AD41A86F5060028E22A /* Supporting Files */,
-				BFF7F30A1AC1F97900A0CD13 /* DareTableViewCell.xib */,
 			);
 			path = Dare;
 			sourceTree = "<group>";
@@ -238,17 +262,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFF8A29C1AC09F270097518F /* BebasNeue Bold.otf in Resources */,
-				BFF7F30B1AC1F97900A0CD13 /* DareTableViewCell.xib in Resources */,
 				BFF8A29D1AC09F270097518F /* BebasNeue Book.otf in Resources */,
 				BFF8A29E1AC09F270097518F /* BebasNeue Light.otf in Resources */,
 				BFF7F3191AC20B3100A0CD13 /* swift 1.jpg in Resources */,
+				BFF2072B1AC342C600CB8592 /* InProgressDareTableViewCell.xib in Resources */,
 				BFF8A29F1AC09F270097518F /* BebasNeue Regular.otf in Resources */,
 				BFF8A2A01AC09F270097518F /* BebasNeue Thin.otf in Resources */,
 				BF288ADF1A86F5060028E22A /* Main.storyboard in Resources */,
 				BFF7F3171AC2033800A0CD13 /* swift 3.jpg in Resources */,
 				BF288AE41A86F5060028E22A /* LaunchScreen.xib in Resources */,
+				BFB0BDF11AC34F41008E4B29 /* ChallengedDareTableViewCell.xib in Resources */,
 				BF288AE11A86F5060028E22A /* Images.xcassets in Resources */,
 				BFF7F31B1AC20B7F00A0CD13 /* swift 2.jpg in Resources */,
+				BFF207271AC33F3100CB8592 /* CompletedDareTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,10 +296,16 @@
 				BFF8A2A41AC0EA8D0097518F /* DareTabBarViewController.swift in Sources */,
 				BF288AD71A86F5060028E22A /* AppDelegate.swift in Sources */,
 				BF9F4D121AC0EF9C004A57FB /* ProfileViewController.swift in Sources */,
+				BFF7F31F1AC2132C00A0CD13 /* ProfilePictureButton.swift in Sources */,
+				BFB0BDF31AC36D4F008E4B29 /* CompletedDareDetailViewController.swift in Sources */,
+				BFF2072A1AC342C600CB8592 /* InProgressDareTableViewCell.swift in Sources */,
 				BF288ADA1A86F5060028E22A /* Dare.xcdatamodeld in Sources */,
+				BFB0BDF01AC34F41008E4B29 /* ChallengedDareTableViewCell.swift in Sources */,
 				BF9F4D151AC0F5BA004A57FB /* DareCreationViewController.swift in Sources */,
 				BFF7F3091AC1EE1A00A0CD13 /* DareTableViewController.swift in Sources */,
+				BFF207261AC33F3100CB8592 /* CompletedDareTableViewCell.swift in Sources */,
 				BFF8A2A21AC0A8380097518F /* AccountCreationViewController.swift in Sources */,
+				BFF7F31D1AC2120100A0CD13 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

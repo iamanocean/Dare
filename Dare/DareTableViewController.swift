@@ -8,63 +8,6 @@
 
 import UIKit
 
-
-class DareTableViewCell: UITableViewCell {
-    @IBOutlet weak var dareImage: UIImageView!
-    @IBOutlet weak var dareTitleLabel: UILabel!
-    @IBOutlet weak var dareLocationLabel: UILabel!
-    @IBOutlet weak var dareUserLabel: UILabel!
-    @IBOutlet weak var dareAttendeesLabel: UILabel!
-    @IBOutlet weak var dareUpVotesLabel: UILabel!
-    @IBOutlet weak var dareBountyLabel: UILabel!
-    @IBOutlet weak var dareDateLabel: UILabel!
-    @IBOutlet weak var dareShareButton: UIButton!
-    @IBAction func didSelectShareButton(sender: AnyObject) {
- 
-    }
-    func loadItem(#title: String, image: String, location: String, user: String, attendees: String, upVotes: String, bounty: String, date: String) {
-        let font = UIFont(name: "BebasNeueRegular", size: 36)
-        if let font = font {
-            dareTitleLabel.font = font
-        }
-        let bebasBoldFont = UIFont(name: "BebasNeueBold", size: 26)
-        if let bebasBoldFont = bebasBoldFont {
-            dareLocationLabel.font = bebasBoldFont
-            dareUserLabel.font = bebasBoldFont
-            dareLocationLabel.textColor = UIColor(red: 0.55, green: 0.55, blue: 0.55, alpha: 1)
-            dareUserLabel.textColor = UIColor(red: 0.55, green: 0.55, blue: 0.55, alpha: 1)
-        }
-        
-        let helveticaFont = UIFont(name: "HelveticaNeue-Light", size: 20)
-        if let helveticaFont = helveticaFont {
-            dareDateLabel.font = helveticaFont
-            dareAttendeesLabel.font = helveticaFont
-            dareBountyLabel.font = helveticaFont
-            dareUpVotesLabel.font = helveticaFont
-            dareDateLabel.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-            dareAttendeesLabel.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-            dareBountyLabel.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-            dareUpVotesLabel.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-        }
-
-        self.dareImage.image = UIImage(named: image)
-        self.dareTitleLabel.text = title
-        self.dareLocationLabel.text = location
-        self.dareUserLabel.text = user
-        self.dareAttendeesLabel.text = attendees
-        self.dareUpVotesLabel.text = upVotes
-        self.dareBountyLabel.text = bounty
-        self.dareDateLabel.text = date;
-        
-        dareImage.contentMode = UIViewContentMode.ScaleAspectFill;
-        dareImage.clipsToBounds = true;
-    }
-
-}
-
-
-
-
 class DareTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     // temporary hardcoded array of images to set up table view
     var images: [String] = ["swift 1.jpg","swift 2.jpg","swift 3.jpg"]
@@ -73,10 +16,14 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var nib = UINib(nibName: "DareTableViewCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "customCell")
+        var completedDareNib = UINib(nibName: "CompletedDareTableViewCell", bundle: nil)
+        var inProgressDareNib: UINib = UINib(nibName: "InProgressDareTableViewCell", bundle: nil)
+        var challengedDareNib: UINib = UINib(nibName: "ChallengedDareTableViewCell", bundle: nil)
         
-        
+        tableView.registerNib(completedDareNib, forCellReuseIdentifier: "CompletedDare")
+        tableView.registerNib(inProgressDareNib, forCellReuseIdentifier: "InProgressDare")
+        tableView.registerNib(challengedDareNib, forCellReuseIdentifier: "ChallengedDare")
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -123,57 +70,34 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.row == 1 {
+            var inProgressCell: ChallengedDareTableViewCell = tableView.dequeueReusableCellWithIdentifier("ChallengedDare") as ChallengedDareTableViewCell
+            inProgressCell.loadItem(title: "Santa Claus", location: "The Engineering Center", date: "Feb 22 @ 2:00", bounty: "200")
+            return inProgressCell
+        }
         
-        var cell: DareTableViewCell = tableView.dequeueReusableCellWithIdentifier("customCell") as DareTableViewCell
+        
+        
+        var cell: CompletedDareTableViewCell = tableView.dequeueReusableCellWithIdentifier("CompletedDare") as CompletedDareTableViewCell
         
         cell.loadItem(title: "Horse Head", image: images[indexPath.row], location: "ECCR 200", user: "Rob_Davis", attendees: "100 People Attended", upVotes: "222", bounty: "320", date: formatDate(NSDate()))
         return cell
     }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CompletedDareDetailViewController") as CompletedDareDetailViewController
+        //detailViewController.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+        //self.presentViewController(detailViewController, animated: true, completion: nil)
+        self.performSegueWithIdentifier("showDetail", sender: nil)
+    }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-    }
-    */
+    //}
+
 
 }
