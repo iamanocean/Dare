@@ -94,7 +94,7 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
     
    
     override func viewWillDisappear(animated: Bool) {
-        var parseDare:PFObject = PFObject(className: "Completed Dares")
+        var parseDare:PFObject = PFObject(className: "CompletedDares")
         parseDare["Title"] = titleLabel.text
         parseDare["Description"] = descriptionLabel.text
         parseDare["Date"] = dateLabel.text  //do we want to display the expiration date??
