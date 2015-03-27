@@ -99,6 +99,15 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
         parseDare["Description"] = descriptionLabel.text
         parseDare["Date"] = dateLabel.text  //do we want to display the expiration date??
         parseDare["Votes"] = 0              //leaving this as an int for now... will change later
+        
+        parseDare.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError!) -> Void in
+            if (success) {
+                // The object has been saved.
+            } else {
+                // There was a problem, check error.description
+            }
+        }
         super.viewWillDisappear(true)
     }
     
