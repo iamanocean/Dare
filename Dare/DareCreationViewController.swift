@@ -92,6 +92,16 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
         //
     }
     
+   
+    override func viewWillDisappear(animated: Bool) {
+        var parseDare:PFObject = PFObject(className: "Dares")
+        parseDare["Title"] = titleLabel.text
+        parseDare["Description"] = descriptionLabel.text
+        parseDare["Date"] = dateLabel.text  //do we want to display the expiration date??
+        parseDare["Votes"] = 0              //leaving this as an int for now... will change later
+        super.viewWillDisappear(true)
+    }
+    
     /**
     :brief:     Incomplete function for pulling a dare from the cloud. Presently just hardcodes a dare
                 When completed, should pull dare, and if that fails produce a UI alertView explaining why
