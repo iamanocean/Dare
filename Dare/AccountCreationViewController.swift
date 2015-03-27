@@ -95,13 +95,31 @@ class AccountCreationViewController: UIViewController {
                 of credentials and backend functionality
     */
     func createNewAccount() {
+        
+        let successFullAccountCreationAlertView: UIAlertView = UIAlertView(title: "Account Created!", message: "You are being returned to the sign in screen", delegate: nil, cancelButtonTitle: "Cool!")
+        
         if verifyCredentialsForEmail(emailAddressField.text, forPassword: newPasswordField.text, withConfirmationPassword: newPasswordConfirmationField.text) {
         // Go to the server and do magical things
             
         // ...
+            
+            var user:PFUser = PFUser()
+            user.username = emailAddressField.text
+            user.password = newPasswordField.text
+            user.email = emailAddressField.text
+            
+            user.signUpInBackgroundWithBlock{
+                (succeeded: Bool!, error: NSError!) -> Void in
+                if error == nil {
+                    successFullAccountCreationAlertView.show()
+                } else {
+                    // let errorString = error.userInfo["error"] as NSString
+                    // Show the errorString somewhere and let the user try again.
+                    // Not sure when this would return an error, we can add a
+                    // handler later if we need/want to.
+                }
+            }
            
-            let successFullAccountCreationAlertView: UIAlertView = UIAlertView(title: "Account Created!", message: "You are being returned to the sign in screen", delegate: nil, cancelButtonTitle: "Cool!")
-            successFullAccountCreationAlertView.show()
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
