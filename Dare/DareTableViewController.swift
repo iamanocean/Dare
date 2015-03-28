@@ -86,9 +86,10 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CompletedDareDetailViewController") as CompletedDareDetailViewController
+        detailViewController.dare = Dare(title: "Hello", blankDescription: "Thing", date: NSDate(), elements: [["Hello"]])
         //detailViewController.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
         //self.presentViewController(detailViewController, animated: true, completion: nil)
-        self.performSegueWithIdentifier("showDetail", sender: nil)
+        self.performSegueWithIdentifier("showChallengedDetail", sender: nil)
     }
     
     // MARK: - Navigation

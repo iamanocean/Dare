@@ -17,12 +17,24 @@ class ChallengedDareTableViewCell: UITableViewCell {
     @IBAction func userDidUpVoteDare(sender: UIButton) {
     }
     
+    
+    
+    
+    /**
+    :brief:         Function that prepares the TableViewCell for Drawing
+                    All parameters are expected to be strings
+    :param:         title       The title of the dare
+    :param:         location    The location of the dare
+    :param:         date        The date that the dare will occur.
+    :param:         bounty      The amount of bounty for the dare
+    */
     func loadItem(#title: String, location: String, date: String, bounty: String) {
         let font = UIFont(name: "BebasNeueRegular", size: 36)
         if let font = font {
             titleLabel.font = font
             titleLabel.text = title
         }
+        
         let helveticaFont = UIFont(name: "HelveticaNeue-Light", size: 20)
         if let helveticaFont = helveticaFont {
             locationLabel.text = location

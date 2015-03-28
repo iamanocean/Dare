@@ -10,7 +10,10 @@ import UIKit
 
 class ProfilePictureButton: UIButton {
 
-    
+    /**
+    :brief:     Custom drawing code for the accept button, do not make modifications to anything inside of
+                this method
+    */
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {

@@ -19,6 +19,7 @@ class CompletedDareDetailViewController: UIViewController {
     @IBOutlet weak var attendeesLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var dareImage: UIImageView!
+    var dare: Dare?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class CompletedDareDetailViewController: UIViewController {
             descriptionLabel.font = descriptionFont
             descriptionLabel.textColor = UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1)
         }
+        
         let dateFont = UIFont(name: "BebasNeueBold", size: 18)
         if let dateFont = dateFont {
             dateLabel.text = "FEB 12 2015 IN THE ENGINEERING CENTER @ 2:00 PM"
@@ -64,9 +66,14 @@ class CompletedDareDetailViewController: UIViewController {
         }
         
         dareImage.image = UIImage(named: "swift 2.jpg")
-
         // Do any additional setup after loading the view.
     }
+    
+    /**
+    :brief:         This function gets the dare for the appropraite  
+    */
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

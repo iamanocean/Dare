@@ -22,6 +22,18 @@ class CompletedDareTableViewCell: UITableViewCell {
     }
     
     
+    
+    /**
+    :brief:         Function that prepares the TableViewCell for Drawing
+                    All parameters are expected to be strings
+    :param:         title       The title of the dare
+    :param:         image       The name of the file that contains the image to be used
+    :param:         user        The name of the user for the dare
+    :param:         attendees   The number of attendees for the dare
+    :param:         upVotes     The number of upVotes for the dare
+    :param:         bounty      The amount of bounty for the dare
+    :param:         date        The date that the dare will occur.
+    */
     func loadItem(#title: String, image: String, location: String, user: String, attendees: String, upVotes: String, bounty: String, date: String) {
         let font = UIFont(name: "BebasNeueRegular", size: 36)
         if let font = font {
@@ -63,11 +75,17 @@ class CompletedDareTableViewCell: UITableViewCell {
 
     
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    
+    
+    
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

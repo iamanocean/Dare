@@ -13,6 +13,7 @@ import UIKit
 :brief:     Shoddy implementation of the dare class, it's basically just a list of properties,
             needs refinement.
 */
+
 class Dare: NSObject {
     var blankDescription: String
     var title: String
