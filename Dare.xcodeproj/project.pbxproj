@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3950CFE71AC75A7000CE6D1B /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950CFE61AC75A7000CE6D1B /* UserTableViewController.swift */; };
 		BF288AD71A86F5060028E22A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288AD61A86F5060028E22A /* AppDelegate.swift */; };
 		BF288ADA1A86F5060028E22A /* Dare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */; };
 		BF288ADC1A86F5060028E22A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288ADB1A86F5060028E22A /* SignInViewController.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3950CFE61AC75A7000CE6D1B /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		BF288AD11A86F5060028E22A /* Dare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF288AD51A86F5060028E22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF288AD61A86F5060028E22A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				BF288AE21A86F5060028E22A /* LaunchScreen.xib */,
 				BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */,
 				BF288AD41A86F5060028E22A /* Supporting Files */,
+				3950CFE61AC75A7000CE6D1B /* UserTableViewController.swift */,
 			);
 			path = Dare;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				BF8142BB1AC4E64D005FB1DB /* DareSubtractButton.swift in Sources */,
 				BFF275AA1AC4DB2E00F8F249 /* InProgressDareDetailViewController.swift in Sources */,
 				BF8142B71AC4E48B005FB1DB /* AcceptButton.swift in Sources */,
+				3950CFE71AC75A7000CE6D1B /* UserTableViewController.swift in Sources */,
 				BFF8A2A21AC0A8380097518F /* AccountCreationViewController.swift in Sources */,
 				BFF275AE1AC4DD6800F8F249 /* ProveItButton.swift in Sources */,
 				BFF7F31D1AC2120100A0CD13 /* SettingsViewController.swift in Sources */,
