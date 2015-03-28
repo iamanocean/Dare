@@ -53,6 +53,9 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
         dare = Dare()
         pullDare()
         
+        //This version is for when the new pull dare function is working.
+        //dare = pullDare()
+        
         
         // Do any additional setup after loading the view.
         
@@ -99,7 +102,7 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
         parseDare["Title"] = titleLabel.text
         parseDare["Description"] = descriptionLabel.text
         parseDare["Date"] = dateLabel.text  //do we want to display the expiration date??
-        parseDare["Votes"] = 0              //leaving this as an int for now... will change later
+        parseDare["Votes"] = []              //leaving this as an int for now... will change later
         
         parseDare.saveInBackgroundWithBlock {
             (success: Bool, error: NSError!) -> Void in
@@ -118,7 +121,49 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
     */
     func pullDare() {
         dare = Dare(title: "Serenade", blankDescription: "You will serenade A_______ In ________________            and give them ___________.", date: NSDate(), elements: [["professor","student","janitor","staff member"], ["Engineering","Duane","The C4C"], ["Chocolate","Roses","A Rubber Ducky"]])
+
     }
+    
+    
+    /*
+    func pullDare() -> Dare {
+        
+        // There is no getRandom() type function so I am querying to find one entry that doesn't
+        // have an empty string as its objectid... I just wonder if it searches in the same order
+        // every time because if so then this will not be random.
+        
+        var query = PFQuery(className:"SystemDares")
+        query.whereKey("objectId", notEqualTo:"")
+        query.limit = 1
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil {
+                // The find succeeded.
+                println("Successfully retrieved \(objects.count) dare.")
+                // Do something with the found objects
+                if let objects = objects as? [PFObject] {
+                    for object in objects {
+                        
+                        let sysTitle = object["Title"] as String
+                        let sysDescription1 = object["Part1"] as String
+                        let sysDescription2 = object["Part2"] as String
+                        let sysDescription3 = object["Part3"] as String
+                        let sysChoices1 = object["Choices1"] as [String]
+                        let sysChoices2 = object["Choices2"] as [String]
+                        let sysChoices3 = object["Choices3"] as [String]
+                        
+                        return self.dare = Dare(title: sysTitle, blankDescription: "\(sysDescription1) _______ \(sysDescription2) ________________ \(sysDescription3) ___________.", date: NSDate(), elements: [sysChoices1, sysChoices2, sysChoices3])
+                    }
+                }
+            } else {
+                // Log details of the failure
+                println("Error: \(error) \(error.userInfo!)")
+            }
+        }
+        return self.dare!
+    }
+    */
+    
     
     /**
     :brief:     Incomplete function used for upvoting a certain dare, right now just prints
