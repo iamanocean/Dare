@@ -123,16 +123,8 @@ class SignInViewController: UIViewController {
     :return:    Returns true if sign is successful, false otherwise
     */
     func verifyCredentialsForEmail(userEmail: String, withPassword userPassword: String) -> Bool {
-        var verified = false;
-        PFUser.logInWithUsernameInBackground(userEmail, password:userPassword) {
-            (user: PFUser!, error: NSError!) -> Void in
-            if user != nil {
-                verified = true
-            } else {
-                // The login failed. Check error to see why.
-            }
-        }
-        return verified;
+        PFUser.logInWithUsername(userEmail, password:userPassword)
+        return PFUser.currentUser() != nil;
     }
     
     
