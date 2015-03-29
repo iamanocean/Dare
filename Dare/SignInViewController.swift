@@ -90,49 +90,53 @@ class SignInViewController: UIViewController {
     :brief:     Incomplete function that handles signing in to the application
     */
     func signIn() {
-        
-        
-        
-        let passwordRecoveryNecessary: Bool = false;
-        if verifyCredentialsForEmail(emailTextField.text, withPassword: passwordTextField.text) {
-            let mainViewController: DareTabBarViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DareTabBarViewController") as DareTabBarViewController
-            self.presentViewController(mainViewController, animated: true, completion: nil)
-            
-        } else {
-            let incorrectCredentialsAlert: UIAlertController = UIAlertController(title: "Incorrect Credentials", message: "Incorrect email or password provided", preferredStyle: UIAlertControllerStyle.ActionSheet)
-
-            incorrectCredentialsAlert.addAction(
-                UIAlertAction(title: "Try Again.", style: UIAlertActionStyle.Cancel, handler: nil))
-            
-            incorrectCredentialsAlert.addAction(
-                UIAlertAction(title: "Recover Password", style: UIAlertActionStyle.Destructive, handler:
-                    {(_) -> Void in
-                        self.sendPasswordRecoveryForEmail(self.emailTextField.text, withPassword: self.passwordTextField.text)
-                    }
-                )
-            )
-            self.presentViewController(incorrectCredentialsAlert, animated: true, completion: nil)
-        }
+       
+        verifyCredentialsForEmail(emailTextField.text, withPassword: passwordTextField.text)
+    
     }
-    
-    
-    
     
     /**
     :brief:     Incomplete Function that verifies a user's credentials for signing in
     :return:    Returns true if sign is successful, false otherwise
     */
-    func verifyCredentialsForEmail(userEmail: String, withPassword userPassword: String) -> Bool {
-        var verified = false;
+    func verifyCredentialsForEmail(userEmail: String, withPassword userPassword: String){
+        
+        let passwordRecoveryNecessary: Bool = false;
+        
         PFUser.logInWithUsernameInBackground(userEmail, password:userPassword) {
             (user: PFUser!, error: NSError!) -> Void in
             if user != nil {
-                verified = true
+                println(error)
+                // Do stuff after successful login.
+                let mainViewController: DareTabBarViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DareTabBarViewController") as DareTabBarViewController
+                self.presentViewController(mainViewController, animated: true, completion: nil)
+                
             } else {
-                // The login failed. Check error to see why.
+                println(error)
+                self.doLoginError()
             }
         }
-        return verified;
+        
+    }
+
+    /**
+    :brief: Renders and error on the condition that the account validation failed
+    */
+    func doLoginError()
+    {
+        let incorrectCredentialsAlert: UIAlertController = UIAlertController(title: "Incorrect Credentials", message: "Incorrect email or password provided", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        incorrectCredentialsAlert.addAction(
+            UIAlertAction(title: "Try Again.", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        incorrectCredentialsAlert.addAction(
+            UIAlertAction(title: "Recover Password", style: UIAlertActionStyle.Destructive, handler:
+                {(_) -> Void in
+                    self.sendPasswordRecoveryForEmail(self.emailTextField.text, withPassword: self.passwordTextField.text)
+                }
+            )
+        )
+        self.presentViewController(incorrectCredentialsAlert, animated: true, completion: nil)
     }
     
     

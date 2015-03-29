@@ -92,7 +92,8 @@ class AccountCreationViewController: UIViewController {
     
     /**
     :brief:     Incomplete function that Handles account creation, including verification 
-                of credentials and backend functionality
+                of credentials and backend functionality, additionally provides user with inital bounty
+                to spend
     */
     func createNewAccount() {
         
@@ -107,6 +108,9 @@ class AccountCreationViewController: UIViewController {
             user.username = emailAddressField.text
             user.password = newPasswordField.text
             user.email = emailAddressField.text
+            user["bounty"] = 200
+            user["wins"]   = 0
+            user["losses"] = 0
             
             user.signUpInBackgroundWithBlock{
                 (succeeded: Bool!, error: NSError!) -> Void in
