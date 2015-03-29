@@ -16,7 +16,7 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var completedDareNib = UINib(nibName: "CompletedDareTableViewCell", bundle: nil)
+        var completedDareNib:  UINib = UINib(nibName: "CompletedDareTableViewCell", bundle: nil)
         var inProgressDareNib: UINib = UINib(nibName: "InProgressDareTableViewCell", bundle: nil)
         var challengedDareNib: UINib = UINib(nibName: "ChallengedDareTableViewCell", bundle: nil)
         

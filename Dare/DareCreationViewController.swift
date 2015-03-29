@@ -82,18 +82,9 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
         }
         
         
-        // Set the data source and delegate for the class.
-        self.darePickerView.dataSource = self
-        self.darePickerView.delegate = self
-        
+       
 
-        // hardcoded, ignore, needs to be deleted and improved.
-        if let dare = dare {
-            titleLabel.text = dare.title
-            descriptionLabel.text = dare.blankDescription
-            dateLabel.text = formatDate(dare.date)
-        }
-        //
+        
     }
     
    
@@ -118,51 +109,56 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
     /**
     :brief:     Incomplete function for pulling a dare from the cloud. Presently just hardcodes a dare
                 When completed, should pull dare, and if that fails produce a UI alertView explaining why
-    */
+
     func pullDare() {
         dare = Dare(title: "Serenade", blankDescription: "You will serenade A_______ In ________________            and give them ___________.", date: NSDate(), elements: [["professor","student","janitor","staff member"], ["Engineering","Duane","The C4C"], ["Chocolate","Roses","A Rubber Ducky"]])
 
     }
+*/
     
     
     /*
-    func pullDare() -> Dare {
+     * Gets a random dare by retreving all the templates and selecting a random index
+     * note that there are better ways to do this with Parse doing most of the work 
+     * but I didnt have the time
+     */
+    func pullDare(){
         
-        // There is no getRandom() type function so I am querying to find one entry that doesn't
-        // have an empty string as its objectid... I just wonder if it searches in the same order
-        // every time because if so then this will not be random.
-        
-        var query = PFQuery(className:"SystemDares")
-        query.whereKey("objectId", notEqualTo:"")
-        query.limit = 1
-        query.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]!, error: NSError!) -> Void in
-            if error == nil {
-                // The find succeeded.
-                println("Successfully retrieved \(objects.count) dare.")
-                // Do something with the found objects
-                if let objects = objects as? [PFObject] {
-                    for object in objects {
-                        
-                        let sysTitle = object["Title"] as String
-                        let sysDescription1 = object["Part1"] as String
-                        let sysDescription2 = object["Part2"] as String
-                        let sysDescription3 = object["Part3"] as String
-                        let sysChoices1 = object["Choices1"] as [String]
-                        let sysChoices2 = object["Choices2"] as [String]
-                        let sysChoices3 = object["Choices3"] as [String]
-                        
-                        return self.dare = Dare(title: sysTitle, blankDescription: "\(sysDescription1) _______ \(sysDescription2) ________________ \(sysDescription3) ___________.", date: NSDate(), elements: [sysChoices1, sysChoices2, sysChoices3])
-                    }
+        var allDaresQuery = PFQuery(className: "TemplateDares")
+        allDaresQuery.findObjectsInBackgroundWithBlock{
+            (results: [AnyObject]!, error: NSError!) -> Void in if error == nil{
+                if error == nil {
+                    let randomIdx = Int(arc4random_uniform(UInt32(results.count)))
+                    self.loadDare(results[randomIdx] as PFObject)
                 }
-            } else {
-                // Log details of the failure
-                println("Error: \(error) \(error.userInfo!)")
             }
         }
-        return self.dare!
+        
     }
-    */
+    
+    func loadDare(dare :PFObject)
+    {
+        var blankDescription: String     = dare["blankDescription"] as String
+        var title: String                = dare["title"] as String
+        var date: NSDate                 = dare["dueDate"] as NSDate
+        var votes: [String]              = ["0"]
+        var possibleElements: [[String]] = dare["options"] as [[String]]
+        
+        println(blankDescription)
+        self.dare =  Dare(title: title, blankDescription: blankDescription, date: date, elements: possibleElements)
+        
+        // Set the data source and delegate for the class.
+        self.darePickerView.dataSource = self
+        self.darePickerView.delegate = self
+        
+        // hardcoded, ignore, needs to be deleted and improved.
+        if let dare = self.dare {
+            titleLabel.text = dare.title
+            descriptionLabel.text = dare.blankDescription
+            dateLabel.text = formatDate(dare.date)
+        }
+    }
+
     
     
     /**
