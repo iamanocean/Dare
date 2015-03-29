@@ -16,7 +16,7 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var completedDareNib = UINib(nibName: "CompletedDareTableViewCell", bundle: nil)
+        var completedDareNib: UINib = UINib(nibName: "CompletedDareTableViewCell", bundle: nil)
         var inProgressDareNib: UINib = UINib(nibName: "InProgressDareTableViewCell", bundle: nil)
         var challengedDareNib: UINib = UINib(nibName: "ChallengedDareTableViewCell", bundle: nil)
         
@@ -55,26 +55,23 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     }
 
     // MARK: - Table view data source
-/*
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 1
-    }
-*/
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
+        
+        
+        /*
+            This method needs to return the number of parse objects up in the cloud.
+        */
+        
+        
+        
         // Return the number of rows in the section.
         return images.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row == 1 {
-            var inProgressCell: ChallengedDareTableViewCell = tableView.dequeueReusableCellWithIdentifier("ChallengedDare") as ChallengedDareTableViewCell
-            inProgressCell.loadItem(title: "Santa Claus", location: "The Engineering Center", date: "Feb 22 @ 2:00", bounty: "200")
-            return inProgressCell
-        }
         
         
         
@@ -85,11 +82,27 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CompletedDareDetailViewController") as CompletedDareDetailViewController
-        detailViewController.dare = Dare(title: "Hello", blankDescription: "Thing", date: NSDate(), elements: [["Hello"]])
-        //detailViewController.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
-        //self.presentViewController(detailViewController, animated: true, completion: nil)
-        self.performSegueWithIdentifier("showChallengedDetail", sender: nil)
+        //hard coding this in for now, clean it up later
+        
+        let dareType: String = "Completed";
+        
+        switch dareType {
+        case "Completed":
+                var detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CompletedDareDetailViewController") as CompletedDareDetailViewController
+                self.performSegueWithIdentifier("showCompletedDetail", sender: nil)
+        case "InProgress":
+                var detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("InProgressDareDetailViewController") as InProgressDareDetailViewController
+                self.performSegueWithIdentifier("showInProgressDetail", sender: nil)
+        case "Challenged":
+                var detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChallengedDareDetailViewController") as ChallengedDareDetailViewController
+                self.performSegueWithIdentifier("showChallengedDetail", sender: nil)
+        default:
+                var detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CompletedDareDetailViewController") as CompletedDareDetailViewController
+                self.performSegueWithIdentifier("showCompletedDetail", sender: nil)
+        }
+        
+        
+        
     }
     
     // MARK: - Navigation
