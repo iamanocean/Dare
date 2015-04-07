@@ -248,7 +248,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="orR-PQ-4V4">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="QN1-WS-cbb">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="QN1-WS-cbb">
                             <connections>
                                 <segue destination="vxD-hD-gJZ" kind="show" id="atx-SW-pTf"/>
                             </connections>
@@ -256,7 +256,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="attendingButton" destination="xIM-XU-NP8" id="eE5-MA-Igq"/>
-                        <outlet property="detailDisclosureButton" destination="QN1-WS-cbb" id="KKg-CM-hBV"/>
                         <outlet property="lostButton" destination="DnX-IY-8Qs" id="ef2-Fs-teE"/>
                         <outlet property="pendingButton" destination="j7J-Tz-IQF" id="0ZY-Be-jVG"/>
                         <outlet property="userBounty" destination="zdT-mV-wLW" id="VOH-mj-meb"/>
