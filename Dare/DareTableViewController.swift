@@ -82,25 +82,11 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //hard coding this in for now, clean it up later
-        
-        let dareType: String = "Completed";
-        
-        switch dareType {
-        case "Completed":
-                var detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CompletedDareDetailViewController") as CompletedDareDetailViewController
-                self.performSegueWithIdentifier("showCompletedDetail", sender: nil)
-        case "InProgress":
-                var detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("InProgressDareDetailViewController") as InProgressDareDetailViewController
-                self.performSegueWithIdentifier("showInProgressDetail", sender: nil)
-        case "Challenged":
-                var detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChallengedDareDetailViewController") as ChallengedDareDetailViewController
-                self.performSegueWithIdentifier("showChallengedDetail", sender: nil)
-        default:
-                var detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CompletedDareDetailViewController") as CompletedDareDetailViewController
-                self.performSegueWithIdentifier("showCompletedDetail", sender: nil)
-        }
-        
+        let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CompletedDareDetailViewController") as CompletedDareDetailViewController
+        detailViewController.dare = Dare(title: "Hello", blankDescription: "Thing", date: NSDate(), elements: [["Hello"]])
+        //detailViewController.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+        //self.presentViewController(detailViewController, animated: true, completion: nil)
+        self.performSegueWithIdentifier("showChallengedDetail", sender: nil)
         
         
     }
