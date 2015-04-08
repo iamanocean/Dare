@@ -449,7 +449,7 @@
         <!--In Progress Dare Detail View Controller-->
         <scene sceneID="fgt-oL-k4Y">
             <objects>
-                <viewController id="7gR-5g-VGY" customClass="InProgressDareDetailViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InProgressDareDetailViewController" id="7gR-5g-VGY" customClass="InProgressDareDetailViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6hD-U3-mNP"/>
                         <viewControllerLayoutGuide type="bottom" id="5uO-zC-eYh"/>
@@ -506,6 +506,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="userDidSelectChickenOut:" destination="7gR-5g-VGY" eventType="touchUpInside" id="YEW-5i-zAC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVq-RZ-Ucy">
                                 <rect key="frame" x="16" y="317" width="42" height="40"/>
@@ -562,6 +565,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FpV-6B-tl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2920" y="-1522"/>
+        </scene>
+        <!--Fail View Controller-->
+        <scene sceneID="WLf-jW-YfI">
+            <objects>
+                <viewController storyboardIdentifier="failViewController" id="MPO-Uh-UAd" customClass="FailViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XcD-TK-Eie"/>
+                        <viewControllerLayoutGuide type="bottom" id="F9f-sH-LHU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c0w-Y5-wsG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgc-2H-cMC">
+                                <rect key="frame" x="87" y="53" width="426" height="180"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hc-K1-bUg">
+                                <rect key="frame" x="125" y="240" width="350" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="YSB-6X-7aS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wgc-2H-cMC" firstAttribute="centerX" secondItem="c0w-Y5-wsG" secondAttribute="centerX" id="0zl-8z-Q9C"/>
+                            <constraint firstItem="2Hc-K1-bUg" firstAttribute="centerX" secondItem="Wgc-2H-cMC" secondAttribute="centerX" id="3OF-dD-gJB"/>
+                            <constraint firstItem="F9f-sH-LHU" firstAttribute="top" secondItem="2Hc-K1-bUg" secondAttribute="bottom" constant="240" id="C5M-aq-oIZ"/>
+                            <constraint firstItem="2Hc-K1-bUg" firstAttribute="centerY" secondItem="c0w-Y5-wsG" secondAttribute="centerY" id="Eya-Uq-oJX"/>
+                            <constraint firstItem="Wgc-2H-cMC" firstAttribute="leading" secondItem="c0w-Y5-wsG" secondAttribute="leadingMargin" constant="71" id="TsB-Q6-fMs"/>
+                            <constraint firstItem="Wgc-2H-cMC" firstAttribute="top" secondItem="XcD-TK-Eie" secondAttribute="bottom" constant="33" id="XN3-Vf-daq"/>
+                            <constraint firstItem="2Hc-K1-bUg" firstAttribute="top" secondItem="Wgc-2H-cMC" secondAttribute="bottom" constant="7" id="lhf-gZ-ng8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="failLabel" destination="Wgc-2H-cMC" id="IE3-dZ-Udv"/>
+                        <outlet property="goHomeLabel" destination="2Hc-K1-bUg" id="JJn-7m-0Iv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mt5-Bd-Yuk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3799" y="-1522"/>
         </scene>
         <!--Completed Dare Detail View Controller-->
         <scene sceneID="MBu-fm-hFF">

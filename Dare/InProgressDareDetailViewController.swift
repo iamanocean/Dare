@@ -61,6 +61,18 @@ class InProgressDareDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func userDidSelectChickenOut(sender: AnyObject) {
+    
+        let alertController: UIAlertController = UIAlertController(title: "Are you sure?", message: "Really Though?", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Bawk!", style: UIAlertActionStyle.Destructive, handler: { (_) -> (Void) in
+            let failViewController = self.storyboard?.instantiateViewControllerWithIdentifier("failViewController") as UIViewController
+            self.presentViewController(failViewController, animated: true, completion: nil)
+        }))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
 
     /*
     // MARK: - Navigation

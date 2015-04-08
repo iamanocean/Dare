@@ -15,6 +15,7 @@
 		BF288AE11A86F5060028E22A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF288AE01A86F5060028E22A /* Images.xcassets */; };
 		BF288AE41A86F5060028E22A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF288AE21A86F5060028E22A /* LaunchScreen.xib */; };
 		BF288AF01A86F5060028E22A /* DareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288AEF1A86F5060028E22A /* DareTests.swift */; };
+		BF5CF8651AD4A50900194680 /* FailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5CF8641AD4A50900194680 /* FailViewController.swift */; };
 		BF8142B51AC4E29F005FB1DB /* ChallengedDareDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8142B41AC4E29F005FB1DB /* ChallengedDareDetailViewController.swift */; };
 		BF8142B71AC4E48B005FB1DB /* AcceptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8142B61AC4E48B005FB1DB /* AcceptButton.swift */; };
 		BF8142B91AC4E4B7005FB1DB /* DareAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8142B81AC4E4B7005FB1DB /* DareAddButton.swift */; };
@@ -82,6 +83,7 @@
 		BF288AE91A86F5060028E22A /* DareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF288AEE1A86F5060028E22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF288AEF1A86F5060028E22A /* DareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DareTests.swift; sourceTree = "<group>"; };
+		BF5CF8641AD4A50900194680 /* FailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailViewController.swift; sourceTree = "<group>"; };
 		BF8142B41AC4E29F005FB1DB /* ChallengedDareDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengedDareDetailViewController.swift; sourceTree = "<group>"; };
 		BF8142B61AC4E48B005FB1DB /* AcceptButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptButton.swift; sourceTree = "<group>"; };
 		BF8142B81AC4E4B7005FB1DB /* DareAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DareAddButton.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				BF288ADB1A86F5060028E22A /* SignInViewController.swift */,
 				BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */,
 				BF288ADD1A86F5060028E22A /* Main.storyboard */,
+				BF5CF8641AD4A50900194680 /* FailViewController.swift */,
 				BF288AE01A86F5060028E22A /* Images.xcassets */,
 				BF288AE21A86F5060028E22A /* LaunchScreen.xib */,
 				BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */,
@@ -404,6 +407,7 @@
 				BF288ADC1A86F5060028E22A /* SignInViewController.swift in Sources */,
 				BFF8A2A41AC0EA8D0097518F /* DareTabBarViewController.swift in Sources */,
 				BF288AD71A86F5060028E22A /* AppDelegate.swift in Sources */,
+				BF5CF8651AD4A50900194680 /* FailViewController.swift in Sources */,
 				BF9F4D121AC0EF9C004A57FB /* ProfileViewController.swift in Sources */,
 				BFF7F31F1AC2132C00A0CD13 /* ProfilePictureButton.swift in Sources */,
 				BFB0BDF31AC36D4F008E4B29 /* CompletedDareDetailViewController.swift in Sources */,
