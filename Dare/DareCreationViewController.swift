@@ -136,13 +136,18 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
         
     }
     
+    //Do not put one dimentional objects in databse becasue dare["options"] as [[String]] will not always 
+    //work
     func loadDare(dare :PFObject)
     {
+        let test = [[String]].self
+        
         var blankDescription: String     = dare["blankDescription"] as String
         var title: String                = dare["title"] as String
         var date: NSDate                 = dare["dueDate"] as NSDate
         var votes: [String]              = ["0"]
         var possibleElements: [[String]] = dare["options"] as [[String]]
+    
         
         println(blankDescription)
         self.dare =  Dare(title: title, blankDescription: blankDescription, date: date, elements: possibleElements)
