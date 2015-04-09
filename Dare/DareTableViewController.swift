@@ -55,26 +55,23 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     }
 
     // MARK: - Table view data source
-/*
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 1
-    }
-*/
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
+        
+        
+        /*
+            This method needs to return the number of parse objects up in the cloud.
+        */
+        
+        
+        
         // Return the number of rows in the section.
         return images.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row == 1 {
-            var inProgressCell: ChallengedDareTableViewCell = tableView.dequeueReusableCellWithIdentifier("ChallengedDare") as ChallengedDareTableViewCell
-            inProgressCell.loadItem(title: "Santa Claus", location: "The Engineering Center", date: "Feb 22 @ 2:00", bounty: "200")
-            return inProgressCell
-        }
         
         
         
@@ -85,11 +82,13 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CompletedDareDetailViewController") as CompletedDareDetailViewController
-        detailViewController.dare = Dare(title: "Hello", blankDescription: "Thing", date: NSDate(), elements: [["Hello"]])
+        let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("InProgressDareDetailViewController") as InProgressDareDetailViewController
+        //detailViewController.dare = Dare(title: "Hello", blankDescription: "Thing", date: NSDate(), elements: [["Hello"]])
         //detailViewController.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
         //self.presentViewController(detailViewController, animated: true, completion: nil)
-        self.performSegueWithIdentifier("showChallengedDetail", sender: nil)
+        self.performSegueWithIdentifier("showInProgressDetail", sender: nil)
+        
+        
     }
     
     // MARK: - Navigation

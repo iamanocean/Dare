@@ -43,6 +43,17 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
     
         self.userDareTable.rowHeight = UITableViewAutomaticDimension
         self.userDareTable.estimatedRowHeight = 44.0
+        fontConfig()
+        
+        
+        let font = UIFont(name: "BebasNeueBold", size: 32)
+        if let font = font {
+            userBounty.font = font
+            userName.font = font
+            userWon.font = font
+            userLost.font = font
+        }
+        
         
         self.loadUserStats()
         
