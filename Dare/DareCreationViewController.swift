@@ -46,6 +46,9 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var darePickerView: UIPickerView!
     var dare: Dare?
     
+    var currentSelection = [Int:String]()
+        //stores the current UIPicker view elements to be sent off to create the new dare
+    
     var navButton:UIBarButtonItem?
     
     
@@ -91,17 +94,28 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
     
     func userSelect()
     {
-        println("Hello button")
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        var parseDare:PFObject = PFObject(className: "CompletedDares")
-        parseDare["Title"] = titleLabel.text
-        parseDare["Description"] = descriptionLabel.text
-        parseDare["Date"] = dateLabel.text  //do we want to display the expiration date??
-        parseDare["Votes"] = []              //leaving this as an int for now... will change later
+        var toDareSelections = [String]()
         
-        parseDare.saveInBackgroundWithBlock {
+        for ( var i = 0; i < self.currentSelection.count ; i++)
+        {
+           toDareSelections.append(currentSelection[i]!)
+        }
+        
+        //add Dare name
+        //add Dare filled in template
+        //add Dare Date
+        //add default bounty 
+        //add location
+        
+        var newDare:PFObject = PFObject(className: "CompleatedTemplateDares")
+        
+        newDare["Name"]     = titleLabel.text
+        newDare["DareText"] = self.fillInDare(descriptionLabel.text!, userSelections: toDareSelections)
+        newDare["Date"]     = dateLabel.text
+        newDare["Bounty"]   = 0
+        newDare["Location"] = "0.0, 0.0"
+        
+        newDare.saveInBackgroundWithBlock {
             (success: Bool, error: NSError!) -> Void in
             if (success) {
                 // The object has been saved.
@@ -109,6 +123,45 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
                 // There was a problem, check error.description
             }
         }
+    
+    }
+    
+    func fillInDare(template:String, userSelections:[String]) -> String
+    {
+       var compleate = ""
+       var part:String = ""
+       var samePart:Bool = true
+       var localSelections = userSelections
+        
+       for c in template
+       {
+          if c != "_" && samePart
+          {
+            part.append(c)
+          }
+          else if c != "_" && !samePart
+          {
+            samePart = true
+            part = part.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            compleate += part + " " + localSelections.removeAtIndex(0) + " "
+            part = ""
+          }
+          else
+          {
+            samePart = false
+          }
+       }
+        if compleate.substringToIndex(advance(compleate.startIndex,1)) == "\""
+        {
+           compleate = compleate.substringFromIndex(advance(compleate.startIndex,1))
+        }
+        
+      return compleate.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        //functionality replaced with done button
         super.viewWillDisappear(true)
     }
     
@@ -155,13 +208,21 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
         var possibleElements: [[String]] = dare["options"] as [[String]]
     
         
-        println(blankDescription)
         self.dare =  Dare(title: title, blankDescription: blankDescription, date: date, elements: possibleElements)
         
         // Set the data source and delegate for the class.
         self.darePickerView.dataSource = self
         self.darePickerView.delegate = self
         
+        //ensure currentSelected has items to create dare in
+        //event user doesn't interact with the picker view 
+        //to create the dare
+        var i = 0
+        for arr in possibleElements
+        {
+            currentSelection[i] = arr[0]
+            i++
+        }
         // hardcoded, ignore, needs to be deleted and improved.
         if let dare = self.dare {
             titleLabel.text = dare.title
@@ -177,8 +238,9 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
                 the title of the dare to the console
     :param:     element     The element that was voted for.
     */
-    func voteForElement(element: String) {
-        println(element)
+    func voteForElement(element: String, col:Int) {
+        self.currentSelection[col] = element
+        
     }
     
     
@@ -293,7 +355,7 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
     */
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if let dare = dare {
-            voteForElement(dare.possibleElements[component][row])
+            voteForElement(dare.possibleElements[component][row], col: component)
         }
     }
     
