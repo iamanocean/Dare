@@ -45,6 +45,8 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var darePickerView: UIPickerView!
     var dare: Dare?
+   
+    var pfDare:PFObject!
     
     var currentSelection = [Int:String]()
         //stores the current UIPicker view elements to be sent off to create the new dare
@@ -101,26 +103,21 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
            toDareSelections.append(currentSelection[i]!)
         }
         
-        //add Dare name
-        //add Dare filled in template
-        //add Dare Date
-        //add default bounty 
-        //add location
-        
         var newDare:PFObject = PFObject(className: "CompleatedTemplateDares")
         
-        newDare["Name"]     = titleLabel.text
-        newDare["DareText"] = self.fillInDare(descriptionLabel.text!, userSelections: toDareSelections)
-        newDare["Date"]     = dateLabel.text
-        newDare["Bounty"]   = 0
-        newDare["Location"] = "0.0, 0.0"
+        newDare["Name"]        = titleLabel.text
+        newDare["DareText"]    = self.fillInDare(descriptionLabel.text!, userSelections: toDareSelections)
+        newDare["Date"]        = dateLabel.text
+        newDare["Bounty"]      = 0
+        newDare["LocationGPS"] = pfDare["LocationGPS"]
+        newDare["Location"]    = pfDare["Location"]
         
         newDare.saveInBackgroundWithBlock {
             (success: Bool, error: NSError!) -> Void in
             if (success) {
-                // The object has been saved.
+                // The object has been saved. TODO add popup
             } else {
-                // There was a problem, check error.description
+                //notify user
             }
         }
     
@@ -165,16 +162,6 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
         super.viewWillDisappear(true)
     }
     
-    /**
-    :brief:     Incomplete function for pulling a dare from the cloud. Presently just hardcodes a dare
-                When completed, should pull dare, and if that fails produce a UI alertView explaining why
-
-    func pullDare() {
-        dare = Dare(title: "Serenade", blankDescription: "You will serenade A_______ In ________________            and give them ___________.", date: NSDate(), elements: [["professor","student","janitor","staff member"], ["Engineering","Duane","The C4C"], ["Chocolate","Roses","A Rubber Ducky"]])
-
-    }
-*/
-    
     
     /*
      * Gets a random dare by retreving all the templates and selecting a random index
@@ -200,6 +187,8 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
     func loadDare(dare :PFObject)
     {
         let test = [[String]].self
+        
+        self.pfDare = dare
         
         var blankDescription: String     = dare["blankDescription"] as String
         var title: String                = dare["title"] as String

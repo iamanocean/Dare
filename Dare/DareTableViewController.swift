@@ -74,7 +74,6 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        
         var cell: CompletedDareTableViewCell = tableView.dequeueReusableCellWithIdentifier("CompletedDare") as CompletedDareTableViewCell
         
         cell.loadItem(title: "Horse Head", image: images[indexPath.row], location: "ECCR 200", user: "Rob_Davis", attendees: "100 People Attended", upVotes: "222", bounty: "320", date: formatDate(NSDate()))
@@ -91,13 +90,5 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
         
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    // override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    //}
-
 
 }
