@@ -46,9 +46,12 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var darePickerView: UIPickerView!
     var dare: Dare?
     
+    var navButton:UIBarButtonItem?
     
     
     override func viewDidLoad() {
+
+        navButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "userSelect")
         super.viewDidLoad()
         dare = Dare()
         pullDare()
@@ -81,13 +84,16 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
             dateLabel.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         }
         
+        self.navigationItem.rightBarButtonItem = navButton!
         
-       
-
         
     }
     
-   
+    func userSelect()
+    {
+        println("Hello button")
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         var parseDare:PFObject = PFObject(className: "CompletedDares")
         parseDare["Title"] = titleLabel.text
