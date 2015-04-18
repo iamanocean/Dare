@@ -34,7 +34,7 @@ class CompletedDareTableViewCell: UITableViewCell {
     :param:         bounty      The amount of bounty for the dare
     :param:         date        The date that the dare will occur.
     */
-    func loadItem(#title: String, image: String, location: String, user: String, attendees: String, upVotes: String, bounty: String, date: String) {
+    func loadItem(#title: String, image: PFFile, location: String, user: String, attendees: String, upVotes: String, bounty: String, date: String) {
         let font = UIFont(name: "BebasNeueRegular", size: 36)
         if let font = font {
             titleLabel.font = font
@@ -59,7 +59,17 @@ class CompletedDareTableViewCell: UITableViewCell {
             upVotesLabel.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         }
         
-        dareImageView.image = UIImage(named: image)
+        image.getDataInBackgroundWithBlock({
+            (imageData:NSData!, error:NSError!) -> Void in
+            if( error == nil)
+            {
+                if let image = UIImage(data:imageData) {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.dareImageView.image = image
+                    }
+                }
+            }
+        })
         titleLabel.text = title
         locationLabel.text = location
         userLabel.text = user
