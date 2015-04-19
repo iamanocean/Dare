@@ -234,7 +234,9 @@ class ChallengedDareDetailViewController: UIViewController {
                     self.bountyCountLabel.text = String(dObject["Bounty"] as Int)
                     self.bountyCountLabel.font = dateFont
                 }
-            }
+                
+                
+            }//end error check
         })
 
     }

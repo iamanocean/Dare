@@ -32,19 +32,9 @@ class CompletedDareDetailViewController: UIViewController {
             self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.blackColor()]
         }
 
-        let descriptionFont = UIFont(name: "BebasNeueBold", size: 27)
-        if let descriptionFont = descriptionFont {
-            descriptionLabel.text = "YOU WILL WEAR A HORSE MASK AND GO ABOUT YOUR NORMAL BUSINESS"
-            descriptionLabel.font = descriptionFont
-            descriptionLabel.textColor = UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1)
-        }
         
-        let dateFont = UIFont(name: "BebasNeueBold", size: 18)
-        if let dateFont = dateFont {
-            dateLabel.text = "FEB 12 2015 IN THE ENGINEERING CENTER @ 2:00 PM"
-            dateLabel.font = dateFont
-            dateLabel.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
-        }
+        
+        
         
         let headerFont = UIFont(name: "BebasNeueBold", size: 32)
         if let headerFont = headerFont {
@@ -58,18 +48,59 @@ class CompletedDareDetailViewController: UIViewController {
             conqueredHeader.font = headerFont
         }
         
-        let labelFont = UIFont(name: "BebasNeueBold", size: 23)
-        if let labelFont = labelFont {
-            attendeesLabel.font = labelFont
-            attendeesLabel.text = "198 PEOPLE"
-            
-            userLabel.font = labelFont
-            userLabel.text = "ROB_DAVIS"
-        }
+
         
         dareImage.image = UIImage(named: "swift 2.jpg")
-        println(dareId)
+        loadData()
         // Do any additional setup after loading the view.
+    }
+    
+    func loadData()
+    {
+       var d = PFQuery(className: "CompleatedDares")
+        d.getObjectInBackgroundWithId(self.dareId, {
+            (dare:PFObject!, error:NSError!) -> Void in
+            if( error == nil )
+            {
+                let descriptionFont = UIFont(name: "BebasNeueBold", size: 27)
+                if let descriptionFont = descriptionFont {
+                    self.descriptionLabel.text = dare["DareText"] as? String
+                    self.descriptionLabel.font = descriptionFont
+                    self.descriptionLabel.textColor = UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1)
+                }
+                
+                let dateFont = UIFont(name: "BebasNeueBold", size: 18)
+                if let dateFont = dateFont {
+                    self.dateLabel.text = (dare["Date"] as String) + " @ " + (dare["Location"] as String)
+                    self.dateLabel.font = dateFont
+                    self.dateLabel.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+                }
+                
+                let labelFont = UIFont(name: "BebasNeueBold", size: 23)
+                if let labelFont = labelFont {
+                    self.attendeesLabel.font = labelFont
+                    self.attendeesLabel.text = String(dare["Bounty"] as Int)
+                    self.userLabel.font = labelFont
+                    self.userLabel.text = dare["User"] as? String
+                    
+                    self.bountyLabel.font = labelFont
+                    self.bountyLabel.text = String(dare["Attendees"] as Int)
+                }
+                
+                 (dare["Proof"] as PFFile).getDataInBackgroundWithBlock({
+                    (imageData:NSData!, error:NSError!) -> Void in
+                    if( error == nil)
+                    {
+                        if let image = UIImage(data:imageData) {
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.dareImage.image = image
+                            }
+                        }
+                    }
+                })//end image load
+                
+            }//end error check
+        })
     }
     
     /**
