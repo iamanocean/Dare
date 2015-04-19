@@ -15,6 +15,8 @@ class InProgressDareDetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var bountyCountLabel: UILabel!
+    
+    var dareId:String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,7 @@ class InProgressDareDetailViewController: UIViewController {
             attendiesLabel.font = dateFont
         }
         // Do any additional setup after loading the view.
+        println(dareId)
     }
 
     override func didReceiveMemoryWarning() {

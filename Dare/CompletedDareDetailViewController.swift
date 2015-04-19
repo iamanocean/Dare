@@ -21,6 +21,8 @@ class CompletedDareDetailViewController: UIViewController {
     @IBOutlet weak var dareImage: UIImageView!
     var dare: Dare?
     
+    var dareId:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,6 +68,7 @@ class CompletedDareDetailViewController: UIViewController {
         }
         
         dareImage.image = UIImage(named: "swift 2.jpg")
+        println(dareId)
         // Do any additional setup after loading the view.
     }
     

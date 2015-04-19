@@ -8,7 +8,8 @@
 
 import UIKit
 
-
+//TODO override init for other calls
+// and remove uneeded gps location (will be used by other contollers)
 class DareElem
 {
     var name:String             = ""
@@ -22,6 +23,7 @@ class DareElem
     var upVotes:Int             = 0
     var dareType:Int            = 0
     var proof:PFFile            = PFFile()
+    var objectId:String         = ""
     
     init(name:String,
         dareText:String,
@@ -33,7 +35,8 @@ class DareElem
         attendees:Int,
         upVotes:Int,
         proof:PFFile,
-        dareType:Int)
+        dareType:Int,
+        objectId:String)
     {
         self.name = name
         self.dareText = dareText
@@ -45,6 +48,7 @@ class DareElem
         self.upVotes = upVotes
         self.dareType = dareType
         self.proof = proof
+        self.objectId = objectId
     }
 }
 
@@ -59,8 +63,15 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     var daresArr: [DareElem]! = []
         //stores all of the dares to be rendered by the list view
     
+    var currentDareElemForSeguq:String = ""
+    
+    var currentDareTypeForSegue:Int = 0;
+    
+    var needsReoad:Bool = false
+    
     
     override func viewDidLoad() {
+        println("In did load")
 
         super.viewDidLoad()
 
@@ -88,6 +99,16 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
             //aquire dares to render from the server
 
     }
+    
+    //TODO only reload when absouly needed
+    override func viewWillAppear(animated: Bool) {
+        if( daresArr.count != 0)
+        {
+            println("Reloading dares")
+            daresArr = []
+            self.loadDares()
+        }
+    }
 
     /**
     :brief:     Helper function that returns a properly formatted date from an NSDate object
@@ -114,9 +135,6 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
             (objects: [AnyObject]!, error: NSError!) -> Void in
             if error == nil
             {
-                // The find succeeded.
-                println("Successfully retrieved \(objects.count) scores.")
-                // Do something with the found objects
                 if let objects = objects as? [PFObject]
                 {
                     for object in objects
@@ -132,11 +150,12 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
                             attendees: 0,
                             upVotes: 0,
                             proof: PFFile(),
-                            dareType: INCOMPLETE_TYPE
+                            dareType: INCOMPLETE_TYPE,
+                            objectId: object.objectId
                             )
                         )
                     }
-                    self.tableView.reloadData()
+                    self.loadInProgress()
                 }
             }
             else
@@ -146,15 +165,16 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
             }//end error check
         }//end find
         
-        var daresInprogress = PFQuery(className: "InprogressDares")
+    }//end load dares
+    
+    func loadInProgress()
+    {
+       var daresInprogress = PFQuery(className: "InprogressDares")
         
-            daresInprogress.findObjectsInBackgroundWithBlock {
+        daresInprogress.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]!, error: NSError!) -> Void in
             if error == nil
             {
-                // The find succeeded.
-                println("Successfully retrieved \(objects.count) scores.")
-                // Do something with the found objects
                 if let objects = objects as? [PFObject]
                 {
                     for object in objects
@@ -170,11 +190,12 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
                             attendees: object["Attendees"] as Int,
                             upVotes: object["UpVotes"] as Int,
                             proof: PFFile(),
-                            dareType: INPROGRESS_TYPE
+                            dareType: INPROGRESS_TYPE,
+                            objectId: object.objectId
                             )
                         )
                     }
-                    self.tableView.reloadData()
+                    self.loadFinished()
                 }
             }
             else
@@ -183,7 +204,10 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
                 println("Error: \(error) \(error.userInfo!)")
             }//end error check
         }//end find
-        
+    }
+    
+    func loadFinished()
+    {
         var daresCompleate = PFQuery(className: "CompleatedDares")
         
             //TODO add proof photo upload
@@ -191,9 +215,6 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
             (objects: [AnyObject]!, error: NSError!) -> Void in
             if error == nil
             {
-                // The find succeeded.
-                println("Successfully retrieved \(objects.count) scores.")
-                // Do something with the found objects
                 if let objects = objects as? [PFObject]
                 {
                     for object in objects
@@ -210,7 +231,8 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
                             attendees: object["Attendees"] as Int,
                             upVotes: object["UpVotes"] as Int,
                             proof:  object["Proof"] as PFFile,
-                            dareType: FINISHED_TYPE
+                            dareType: FINISHED_TYPE,
+                            objectId: object.objectId
                             )
                         )
                     }
@@ -223,8 +245,7 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
                 println("Error: \(error) \(error.userInfo!)")
             }//end error check
         }//end find
-        
-    }//end load dares
+    }
     
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -236,6 +257,7 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell: UITableViewCell = UITableViewCell()
+      
         
         switch daresArr[indexPath.row].dareType
         {
@@ -299,10 +321,42 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("InProgressDareDetailViewController") as InProgressDareDetailViewController
-        //detailViewController.dare = Dare(title: "Hello", blankDescription: "Thing", date: NSDate(), elements: [["Hello"]])
-        //detailViewController.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
-        //self.presentViewController(detailViewController, animated: true, completion: nil)
-        self.performSegueWithIdentifier("showCompleatedDareDetail", sender: nil)
+        
+        self.currentDareElemForSeguq = daresArr[indexPath.row].objectId
+        self.currentDareTypeForSegue = daresArr[indexPath.row].dareType
+        
+        switch(daresArr[indexPath.row].dareType)
+        {
+            case INCOMPLETE_TYPE:
+                self.performSegueWithIdentifier("showChallengedDetail", sender: nil)
+            case INPROGRESS_TYPE:
+                self.performSegueWithIdentifier("showInProgressDetail", sender: nil)
+            case FINISHED_TYPE:
+                self.performSegueWithIdentifier("showDetail", sender: nil)
+            default:
+                println("ERROR with view transition")
+        }
     }//end tableview
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        switch self.currentDareTypeForSegue
+        {
+            case INCOMPLETE_TYPE:
+                let destinationVC = segue.destinationViewController as ChallengedDareDetailViewController
+                destinationVC.dareId = self.currentDareElemForSeguq
+            case INPROGRESS_TYPE:
+                let destinationVC = segue.destinationViewController as InProgressDareDetailViewController
+                destinationVC.dareId = self.currentDareElemForSeguq
+            case FINISHED_TYPE:
+                let destinationVC = segue.destinationViewController as CompletedDareDetailViewController
+                destinationVC.dareId = self.currentDareElemForSeguq
+            default:
+                println("Error in loading new view")
+        }
+        
+        // Create a new variable to store the instance of PlayerTableViewController
+    }
+    
 
 }//end class

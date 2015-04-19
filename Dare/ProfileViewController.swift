@@ -98,8 +98,9 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
         userWon.text    = "Won:"
         userLost.text   = "Lost:"
 
-        userBountyCount.text = String(currentUser["bounty"] as Int)
-        userWonCount.text  = String(currentUser["wins"] as Int)
+        //TODO fix userWonCount and Bounty count to point to correct lables
+        userWonCount.text = String(currentUser["bounty"] as Int)
+        userBountyCount.text  = String(currentUser["wins"] as Int)
         userLostCount.text   = String(currentUser["losses"] as Int)
         
     }

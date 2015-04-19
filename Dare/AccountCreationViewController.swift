@@ -111,6 +111,7 @@ class AccountCreationViewController: UIViewController {
             user["bounty"] = 200
             user["wins"]   = 0
             user["losses"] = 0
+            user["attempting"] = []
             
             user.signUpInBackgroundWithBlock{
                 (succeeded: Bool!, error: NSError!) -> Void in

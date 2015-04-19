@@ -344,7 +344,7 @@
         <!--Challenged Dare Detail View Controller-->
         <scene sceneID="gJw-dG-YUv">
             <objects>
-                <viewController id="IKH-mQ-VuX" customClass="ChallengedDareDetailViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="incompleteDareView" id="IKH-mQ-VuX" customClass="ChallengedDareDetailViewController" customModule="Dare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c3H-ns-bD8"/>
                         <viewControllerLayoutGuide type="bottom" id="fYg-ow-DJh"/>
@@ -379,12 +379,18 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addBounty" destination="IKH-mQ-VuX" eventType="touchUpInside" id="hfZ-eY-I3a"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8r6-qp-cCS" customClass="DareSubtractButton" customModule="Dare" customModuleProvider="target">
                                 <rect key="frame" x="499" y="293" width="30" height="30"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="subBounty" destination="IKH-mQ-VuX" eventType="touchUpInside" id="7zE-L3-AIe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itq-oa-zQj" customClass="AcceptButton" customModule="Dare" customModuleProvider="target">
                                 <rect key="frame" x="165" y="506" width="270" height="50"/>
@@ -395,6 +401,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="acceptDare" destination="IKH-mQ-VuX" eventType="touchUpInside" id="AcT-Vs-XiG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaQ-GT-QcZ">
                                 <rect key="frame" x="16" y="257" width="42" height="37"/>
@@ -757,7 +766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bx0-IL-oN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2920" y="-792"/>
+            <point key="canvasLocation" x="2556" y="-787"/>
         </scene>
         <!--Dare Table View Controller-->
         <scene sceneID="dbM-yb-v2q">
