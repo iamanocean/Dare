@@ -199,6 +199,7 @@ class ChallengedDareDetailViewController: UIViewController {
         else
         {
             let alertController: UIAlertController = UIAlertController(title: "Warning", message: "You are Broke", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
