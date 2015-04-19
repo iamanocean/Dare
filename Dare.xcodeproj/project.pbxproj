@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3950CFE71AC75A7000CE6D1B /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950CFE61AC75A7000CE6D1B /* UserTableViewController.swift */; };
+		399526671AE3620A0047B3EF /* InprogressWorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399526661AE3620A0047B3EF /* InprogressWorldViewController.swift */; };
+		399526691AE364BB0047B3EF /* attendingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399526681AE364BB0047B3EF /* attendingButton.swift */; };
+		3995266B1AE364D60047B3EF /* upVoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3995266A1AE364D60047B3EF /* upVoteButton.swift */; };
+		3995266D1AE36FC30047B3EF /* WaitingForProof.png in Resources */ = {isa = PBXBuildFile; fileRef = 3995266C1AE36FC30047B3EF /* WaitingForProof.png */; };
 		BF288AD71A86F5060028E22A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288AD61A86F5060028E22A /* AppDelegate.swift */; };
 		BF288ADA1A86F5060028E22A /* Dare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF288AD81A86F5060028E22A /* Dare.xcdatamodeld */; };
 		BF288ADC1A86F5060028E22A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF288ADB1A86F5060028E22A /* SignInViewController.swift */; };
@@ -72,6 +76,10 @@
 
 /* Begin PBXFileReference section */
 		3950CFE61AC75A7000CE6D1B /* UserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		399526661AE3620A0047B3EF /* InprogressWorldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InprogressWorldViewController.swift; sourceTree = "<group>"; };
+		399526681AE364BB0047B3EF /* attendingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = attendingButton.swift; sourceTree = "<group>"; };
+		3995266A1AE364D60047B3EF /* upVoteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = upVoteButton.swift; sourceTree = "<group>"; };
+		3995266C1AE36FC30047B3EF /* WaitingForProof.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WaitingForProof.png; sourceTree = SOURCE_ROOT; };
 		BF288AD11A86F5060028E22A /* Dare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF288AD51A86F5060028E22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF288AD61A86F5060028E22A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +214,7 @@
 		BF288AD41A86F5060028E22A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3995266C1AE36FC30047B3EF /* WaitingForProof.png */,
 				BFF7F3181AC20B3100A0CD13 /* swift 1.jpg */,
 				BFF7F31A1AC20B7F00A0CD13 /* swift 2.jpg */,
 				BFF7F3161AC2033800A0CD13 /* swift 3.jpg */,
@@ -258,6 +267,8 @@
 				BFF7F31E1AC2132C00A0CD13 /* ProfilePictureButton.swift */,
 				BFF275AD1AC4DD6800F8F249 /* ProveItButton.swift */,
 				BFF275AB1AC4DC3100F8F249 /* ChickenOutButton.swift */,
+				399526681AE364BB0047B3EF /* attendingButton.swift */,
+				3995266A1AE364D60047B3EF /* upVoteButton.swift */,
 			);
 			name = "Custom Buttons";
 			sourceTree = "<group>";
@@ -265,6 +276,7 @@
 		BF8142BE1AC4E991005FB1DB /* Detail View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				399526661AE3620A0047B3EF /* InprogressWorldViewController.swift */,
 				BFF275A91AC4DB2E00F8F249 /* InProgressDareDetailViewController.swift */,
 				BFB0BDF21AC36D4F008E4B29 /* CompletedDareDetailViewController.swift */,
 				BF8142B41AC4E29F005FB1DB /* ChallengedDareDetailViewController.swift */,
@@ -373,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFF8A29C1AC09F270097518F /* BebasNeue Bold.otf in Resources */,
+				3995266D1AE36FC30047B3EF /* WaitingForProof.png in Resources */,
 				BFF8A29D1AC09F270097518F /* BebasNeue Book.otf in Resources */,
 				BFF8A29E1AC09F270097518F /* BebasNeue Light.otf in Resources */,
 				BFF7F3191AC20B3100A0CD13 /* swift 1.jpg in Resources */,
@@ -412,6 +425,7 @@
 				BFF7F31F1AC2132C00A0CD13 /* ProfilePictureButton.swift in Sources */,
 				BFB0BDF31AC36D4F008E4B29 /* CompletedDareDetailViewController.swift in Sources */,
 				BF8142B91AC4E4B7005FB1DB /* DareAddButton.swift in Sources */,
+				399526671AE3620A0047B3EF /* InprogressWorldViewController.swift in Sources */,
 				BFF2072A1AC342C600CB8592 /* InProgressDareTableViewCell.swift in Sources */,
 				BF288ADA1A86F5060028E22A /* Dare.xcdatamodeld in Sources */,
 				BFB0BDF01AC34F41008E4B29 /* ChallengedDareTableViewCell.swift in Sources */,
@@ -424,7 +438,9 @@
 				BF8142B71AC4E48B005FB1DB /* AcceptButton.swift in Sources */,
 				3950CFE71AC75A7000CE6D1B /* UserTableViewController.swift in Sources */,
 				BFF8A2A21AC0A8380097518F /* AccountCreationViewController.swift in Sources */,
+				399526691AE364BB0047B3EF /* attendingButton.swift in Sources */,
 				BFF275AE1AC4DD6800F8F249 /* ProveItButton.swift in Sources */,
+				3995266B1AE364D60047B3EF /* upVoteButton.swift in Sources */,
 				BFF7F31D1AC2120100A0CD13 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

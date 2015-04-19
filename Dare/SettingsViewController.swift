@@ -34,10 +34,28 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func didPushLogOut(sender: AnyObject) {
-        
+        PFUser.logOut()
+        self.performSegueWithIdentifier("backToLogin", sender: nil)
     }
     @IBAction func didPushDeleteAccount(sender: AnyObject) {
-        let accountDeletionAlertController: UIAlertController = UIAlertController(title: "Account Deletion", message: "Are you sure you want to delete your account?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        func die(alert: UIAlertAction!)
+        {
+            PFUser.currentUser().deleteInBackgroundWithBlock({
+                (dead:Bool!, error:NSError!) -> Void in
+                if error != nil
+                {
+                    println("Failed to delete user")
+                }
+            })
+            self.performSegueWithIdentifier("backToLogin", sender: nil)
+        }
+        
+        let alertController: UIAlertController = UIAlertController(title: "Are you sure?", message: "Really Though?", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Good By =(", style: UIAlertActionStyle.Destructive, handler:die))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     

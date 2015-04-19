@@ -116,22 +116,54 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
     @IBAction func loadPendingDares()
     {
         dareArray.removeAllObjects()
-        var pendingDares:[NSArray] = PFUser.currentUser()["attempting"] as [NSArray]
-        loadDareNames(pendingDares, classN:"InprogressDares")
+        var q = PFQuery(className: "InprogressDares")
+        q.whereKey("userAttemptingID", equalTo: PFUser.currentUser().objectId)
+        q.findObjectsInBackgroundWithBlock({
+            (objects:[AnyObject]!, error:NSError!) -> Void in
+            if error == nil
+            {
+               for o in objects
+               {
+                   self.dareArray.addObject((o as PFObject)["Name"])
+               }
+                
+                self.userDareTable.reloadData()
+                
+            }
+        })
     }
     
     @IBAction func loadWonDares()
     {
         dareArray.removeAllObjects()
-        var wonDares:[NSArray] = PFUser.currentUser()["won"] as [NSArray]
-        loadDareNames(wonDares, classN:"CompleatedDares")
+        var q = PFQuery(className: "CompleatedDares")
+        q.whereKey("winnerID", equalTo: PFUser.currentUser().objectId)
+        q.findObjectsInBackgroundWithBlock({
+            (objects:[AnyObject]!, error:NSError!) -> Void in
+            if error == nil
+            {
+               for o in objects
+               {
+                   self.dareArray.addObject((o as PFObject)["Name"])
+               }
+                self.userWonCount.text = String(objects.count)
+                
+                self.userDareTable.reloadData()
+                
+            }
+        })
+        
     }
     
     @IBAction func LoadLostDares()
     {
         dareArray.removeAllObjects()
-        var lostDares:[NSArray] = PFUser.currentUser()["failed"] as [NSArray]
-        loadDareNames(lostDares, classN:"CompleatedDares")
+        var lostDares:[String] = PFUser.currentUser()["failed"] as [String]
+        for o in lostDares
+        {
+            dareArray.addObject(o)
+        }
+        self.userDareTable.reloadData()
     }
     
     func loadDareNames(daresId:[NSArray], classN:String)
@@ -145,8 +177,8 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
                 for o in objects
                 {
                    self.dareArray.addObject( (o as PFObject)["Name"] )
-                   self.userDareTable.reloadData()
                 }
+                self.userDareTable.reloadData()
             }
             else
             {

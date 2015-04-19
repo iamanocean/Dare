@@ -107,7 +107,7 @@ class ChallengedDareDetailViewController: UIViewController {
         )
         self.presentViewController(incorrectCredentialsAlert, animated: true, completion: nil)
     }
-    
+   
     func updateDareStatus()
     {
         var newInprogressDare = PFObject(className: "InprogressDares")
@@ -134,7 +134,13 @@ class ChallengedDareDetailViewController: UIViewController {
                 newInprogressDare["LocationGPS"]    = locationGps
                 newInprogressDare["UserAttempting"] = userName
                 newInprogressDare["Attendees"]      = 0
-                newInprogressDare["UpVotes"]      = 0
+                newInprogressDare["UpVotes"]        = 0
+                newInprogressDare["attempterHasProof"] = false
+                newInprogressDare["userAttemptingID"] = PFUser.currentUser().objectId
+                
+                let imageData = UIImagePNGRepresentation(UIImage(named: "WaitingForProof"))
+                let imageFile = PFFile(name: "WaitingForProof", data: imageData)
+                newInprogressDare["proofToConfirm"] = imageFile
                 
                 dObject.deleteInBackgroundWithBlock({
                     (r:Bool!, error:NSError!) -> Void in
@@ -145,27 +151,13 @@ class ChallengedDareDetailViewController: UIViewController {
                 })
                 newInprogressDare.saveInBackgroundWithBlock({
                     (r:Bool!, error:NSError!) -> Void in
-                    if( !r )
+                    if( r == true )
                     {
-                        println("Faield")
+                        self.goBack()
                     }
                 })
                 
-                var userAttempting:[String] = PFUser.currentUser()["attempting"] as [String]
-                userAttempting.append(newInprogressDare.objectId)
-                PFUser.currentUser()["attempting"] = userAttempting
-                PFUser.currentUser().saveInBackgroundWithBlock({
-                    (r:Bool!, error:NSError!) -> Void in
-                        if( error == nil)
-                        {
-                        }//end error user svaing
-                        else
-                        {
-                            println("Error saving user info")
-                        }
-                })
-                
-                self.goBack()
+
                 
             }
             else

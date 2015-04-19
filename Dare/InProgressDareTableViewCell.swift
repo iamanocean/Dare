@@ -13,6 +13,7 @@ class InProgressDareTableViewCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var bountyLabel: UILabel!
+    @IBOutlet weak var dareImageView: UIImageView!
 
     
 
@@ -25,7 +26,7 @@ class InProgressDareTableViewCell: UITableViewCell {
     :param:         date        The date that the dare will occur.
     :param:         bounty      The amount of bounty for the dare
     */
-    func loadItem(#title: String, location: String, date: String, bounty: String) {
+    func loadItem(#title: String, location: String, date: String, bounty: String, pfImage:PFFile) {
         
         let font = UIFont(name: "BebasNeueRegular", size: 36)
         if let font = font {
@@ -48,6 +49,18 @@ class InProgressDareTableViewCell: UITableViewCell {
         }
 
         self.backgroundColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.3)
+        pfImage.getDataInBackgroundWithBlock({
+            (imageData:NSData!, error:NSError!) -> Void in
+            if( error == nil)
+            {
+                if let image = UIImage(data:imageData) {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.dareImageView.image = image
+                    }
+                }
+            }
+        })
+        
     }
     
     

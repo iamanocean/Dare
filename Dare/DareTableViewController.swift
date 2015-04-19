@@ -65,7 +65,9 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     
     var currentDareElemForSeguq:String = ""
     
-    var currentDareTypeForSegue:Int = 0;
+    var currentDareTypeForSegue:Int = -1
+    
+    var currentUserForSeque:String = ""
     
     var needsReoad:Bool = false
     
@@ -108,6 +110,7 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
             daresArr = []
             self.loadDares()
         }
+        self.currentDareTypeForSegue = -1
     }
 
     /**
@@ -189,7 +192,7 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
                             userId: object["UserAttempting"] as String,
                             attendees: object["Attendees"] as Int,
                             upVotes: object["UpVotes"] as Int,
-                            proof: PFFile(),
+                            proof: object["proofToConfirm"] as PFFile,
                             dareType: INPROGRESS_TYPE,
                             objectId: object.objectId
                             )
@@ -296,7 +299,8 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
             title: dare.name,
             location: dare.location,
             date: dare.date,
-            bounty: String(dare.bounty)
+            bounty: String(dare.bounty),
+            pfImage: dare.proof
         )
         return inProgressCell
     }
@@ -324,13 +328,22 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
         
         self.currentDareElemForSeguq = daresArr[indexPath.row].objectId
         self.currentDareTypeForSegue = daresArr[indexPath.row].dareType
+        var currentUser = daresArr[indexPath.row].userId
+        self.currentUserForSeque = currentUser
         
         switch(daresArr[indexPath.row].dareType)
         {
             case INCOMPLETE_TYPE:
                 self.performSegueWithIdentifier("showChallengedDetail", sender: nil)
             case INPROGRESS_TYPE:
-                self.performSegueWithIdentifier("showInProgressDetail", sender: nil)
+                if( currentUser == PFUser.currentUser()["username"] as NSString)
+                {
+                    self.performSegueWithIdentifier("showInProgressDetail", sender: nil)
+                }
+                else
+                {
+                    self.performSegueWithIdentifier("worldInprogress", sender: nil)
+                }
             case FINISHED_TYPE:
                 self.performSegueWithIdentifier("showDetail", sender: nil)
             default:
@@ -346,8 +359,16 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
                 let destinationVC = segue.destinationViewController as ChallengedDareDetailViewController
                 destinationVC.dareId = self.currentDareElemForSeguq
             case INPROGRESS_TYPE:
-                let destinationVC = segue.destinationViewController as InProgressDareDetailViewController
-                destinationVC.dareId = self.currentDareElemForSeguq
+                if self.currentUserForSeque == PFUser.currentUser()["username"] as NSString
+                {
+                    let destinationVC = segue.destinationViewController as InProgressDareDetailViewController
+                    destinationVC.dareId = self.currentDareElemForSeguq
+                }
+                else
+                {
+                   let dest = segue.destinationViewController as InprogressWorldViewController
+                   dest.dareId = self.currentDareElemForSeguq
+                }
             case FINISHED_TYPE:
                 let destinationVC = segue.destinationViewController as CompletedDareDetailViewController
                 destinationVC.dareId = self.currentDareElemForSeguq
