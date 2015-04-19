@@ -8,36 +8,7 @@
 
 import UIKit
 
-
-/**
-:brief:     Shoddy implementation of the dare class, it's basically just a list of properties,
-            needs refinement.
-*/
-
-class Dare: NSObject {
-    var blankDescription: String
-    var title: String
-    var date: NSDate
-    var votes: [String]
-    var possibleElements: [[String]]
-    
-    init(title: String, blankDescription: String, date: NSDate, elements: [[String]]) {
-        self.title = title
-        self.blankDescription = blankDescription
-        self.date = date
-        self.possibleElements = elements
-        self.votes = []
-    }
-    override init() {
-        self.title = "Dare not found"
-        self.blankDescription = "Something went wrong, the Boese god did not permit this to happen"
-        self.date = NSDate()
-        self.possibleElements = [[":(",":(",":("],[":(",":(",":("],[":(",":(",":("]]
-        self.votes = []
-    }
-}
-
-
+// moved Dare class to a new swift file
 
 class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var titleLabel: UILabel!

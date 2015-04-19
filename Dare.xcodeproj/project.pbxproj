@@ -49,6 +49,7 @@
 		BFF8A2A01AC09F270097518F /* BebasNeue Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BFF8A29A1AC095030097518F /* BebasNeue Thin.otf */; };
 		BFF8A2A21AC0A8380097518F /* AccountCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */; };
 		BFF8A2A41AC0EA8D0097518F /* DareTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8A2A31AC0EA8D0097518F /* DareTabBarViewController.swift */; };
+		C3E0E1371AE413DA006901F8 /* Dare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0E1361AE413D9006901F8 /* Dare.swift */; };
 		C3F8528E1AC3D18B00C92E44 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F8528D1AC3D18B00C92E44 /* AudioToolbox.framework */; };
 		C3F852901AC3D19900C92E44 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F8528F1AC3D19900C92E44 /* CFNetwork.framework */; };
 		C3F852921AC3D1A800C92E44 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F852911AC3D1A800C92E44 /* CoreGraphics.framework */; };
@@ -121,6 +122,7 @@
 		BFF8A29A1AC095030097518F /* BebasNeue Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Thin.otf"; sourceTree = "<group>"; };
 		BFF8A2A11AC0A8380097518F /* AccountCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreationViewController.swift; sourceTree = "<group>"; };
 		BFF8A2A31AC0EA8D0097518F /* DareTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DareTabBarViewController.swift; sourceTree = "<group>"; };
+		C3E0E1361AE413D9006901F8 /* Dare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dare.swift; sourceTree = "<group>"; };
 		C3F8528D1AC3D18B00C92E44 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C3F8528F1AC3D19900C92E44 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C3F852911AC3D1A800C92E44 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -196,6 +198,7 @@
 				BF8142BE1AC4E991005FB1DB /* Detail View Controllers */,
 				BFF7F3081AC1EE1A00A0CD13 /* DareTableViewController.swift */,
 				BF9F4D141AC0F5BA004A57FB /* DareCreationViewController.swift */,
+				C3E0E1361AE413D9006901F8 /* Dare.swift */,
 				BF9F4D111AC0EF9C004A57FB /* ProfileViewController.swift */,
 				BFF7F31C1AC2120100A0CD13 /* SettingsViewController.swift */,
 				BF288ADB1A86F5060028E22A /* SignInViewController.swift */,
@@ -441,6 +444,7 @@
 				399526691AE364BB0047B3EF /* attendingButton.swift in Sources */,
 				BFF275AE1AC4DD6800F8F249 /* ProveItButton.swift in Sources */,
 				3995266B1AE364D60047B3EF /* upVoteButton.swift in Sources */,
+				C3E0E1371AE413DA006901F8 /* Dare.swift in Sources */,
 				BFF7F31D1AC2120100A0CD13 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
