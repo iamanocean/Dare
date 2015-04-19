@@ -57,6 +57,7 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
         
         self.loadUserStats()
         
+        self.loadAttendingDares()
 
     }
     
@@ -105,24 +106,53 @@ class ProfileViewController: UIViewController,UITableViewDataSource, UITableView
         
     }
     
-    func loadAttendingDares()
+    @IBAction func loadAttendingDares()
     {
-        
+        dareArray.removeAllObjects()
+        var attendingDares:[NSArray] = PFUser.currentUser()["attending"] as [NSArray]
+        loadDareNames(attendingDares, classN:"InprogressDares")
     }
     
-    func loadPendingDares()
+    @IBAction func loadPendingDares()
     {
-        
+        dareArray.removeAllObjects()
+        var pendingDares:[NSArray] = PFUser.currentUser()["attempting"] as [NSArray]
+        loadDareNames(pendingDares, classN:"InprogressDares")
     }
     
-    func loadWonDares()
+    @IBAction func loadWonDares()
     {
-        
+        dareArray.removeAllObjects()
+        var wonDares:[NSArray] = PFUser.currentUser()["won"] as [NSArray]
+        loadDareNames(wonDares, classN:"CompleatedDares")
     }
     
-    func LoadLostDares()
+    @IBAction func LoadLostDares()
     {
-        
+        dareArray.removeAllObjects()
+        var lostDares:[NSArray] = PFUser.currentUser()["failed"] as [NSArray]
+        loadDareNames(lostDares, classN:"CompleatedDares")
+    }
+    
+    func loadDareNames(daresId:[NSArray], classN:String)
+    {
+       var q = PFQuery(className: classN)
+        q.whereKey("objectId", containedIn: daresId)
+        q.findObjectsInBackgroundWithBlock({
+            (objects:[AnyObject]!, error:NSError!) -> Void in
+            if error == nil
+            {
+                for o in objects
+                {
+                   self.dareArray.addObject( (o as PFObject)["Name"] )
+                   self.userDareTable.reloadData()
+                }
+            }
+            else
+            {
+                println(error)
+            }
+        })
     }
     
     

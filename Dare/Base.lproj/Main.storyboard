@@ -104,6 +104,9 @@
                                 <state key="normal" title="Attending">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadAttendingDares" destination="Hyj-EG-qm5" eventType="touchUpInside" id="Ej7-PQ-Kbz"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xX4-we-BEF">
                                 <rect key="frame" x="0.0" y="298" width="600" height="253"/>
@@ -137,6 +140,9 @@
                                 <state key="normal" title="Pending">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadPendingDares" destination="Hyj-EG-qm5" eventType="touchUpInside" id="hJ7-Im-mnM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnX-IY-8Qs">
                                 <rect key="frame" x="514" y="260" width="70" height="30"/>
@@ -146,6 +152,9 @@
                                 <state key="normal" title="Lost">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="LoadLostDares" destination="Hyj-EG-qm5" eventType="touchUpInside" id="9Hf-Qy-TAn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxZ-zW-vtJ">
                                 <rect key="frame" x="279" y="72" width="42" height="42"/>
@@ -209,6 +218,9 @@
                                 <state key="normal" title="Won">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadWonDares" destination="Hyj-EG-qm5" eventType="touchUpInside" id="jBI-QU-AAQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

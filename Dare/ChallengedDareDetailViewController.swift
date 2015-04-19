@@ -152,7 +152,7 @@ class ChallengedDareDetailViewController: UIViewController {
                 })
                 
                 var userAttempting:[String] = PFUser.currentUser()["attempting"] as [String]
-                userAttempting.append(self.dareId)
+                userAttempting.append(newInprogressDare.objectId)
                 PFUser.currentUser()["attempting"] = userAttempting
                 PFUser.currentUser().saveInBackgroundWithBlock({
                     (r:Bool!, error:NSError!) -> Void in
