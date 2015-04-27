@@ -99,7 +99,8 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
         
         
         
-        self.loadDares()
+        //self.loadDares()
+        self.loadFinished()
             //aquire dares to render from the server
 
     }
@@ -110,7 +111,8 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
         {
             println("Reloading dares")
             daresArr = []
-            self.loadDares()
+            //self.loadDares()
+            self.loadFinished()
         }
         self.currentDareTypeForSegue = -1
     }
@@ -132,7 +134,8 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
 
-    func loadDares()
+    //func loadDares()
+    func loadIncomplete()
     {
         var daresIncompleate = PFQuery(className:"CompleatedTemplateDares")
         
@@ -161,7 +164,8 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
                             )
                         )
                     }
-                    self.loadInProgress()
+                    //self.loadInProgress()
+                    self.tableView.reloadData()
                 }
             }
             else
@@ -201,7 +205,8 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
                             )
                         )
                     }
-                    self.loadFinished()
+                    //self.loadFinished()
+                    self.loadIncomplete()
                 }
             }
             else
@@ -242,7 +247,8 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
                             )
                         )
                     }
-                    self.tableView.reloadData()
+                    //self.tableView.reloadData()
+                    self.loadInProgress()
                 }
             }
             else

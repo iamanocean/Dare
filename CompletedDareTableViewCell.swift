@@ -77,6 +77,7 @@ class CompletedDareTableViewCell: UITableViewCell {
         upVotesLabel.text = upVotes
         bountyLabel.text = bounty
         dateLabel.text = date;
+        shareButton.setTitle("Share", forState: UIControlState.Normal)
         
         dareImageView.contentMode = UIViewContentMode.ScaleAspectFill;
         dareImageView.clipsToBounds = true;
