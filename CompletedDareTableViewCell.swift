@@ -47,7 +47,7 @@ class CompletedDareTableViewCell: UITableViewCell {
             userLabel.textColor = UIColor(red: 0.55, green: 0.55, blue: 0.55, alpha: 1)
         }
         
-        let helveticaFont = UIFont(name: "HelveticaNeue-Light", size: 20)
+        let helveticaFont = UIFont(name: "BebasNeueRegular", size: 20)
         if let helveticaFont = helveticaFont {
             dateLabel.font = helveticaFont
             attendeesLabel.font = helveticaFont
@@ -78,6 +78,7 @@ class CompletedDareTableViewCell: UITableViewCell {
         bountyLabel.text = bounty
         dateLabel.text = date;
         shareButton.setTitle("Share", forState: UIControlState.Normal)
+        shareButton.titleLabel?.font = helveticaFont;
         
         dareImageView.contentMode = UIViewContentMode.ScaleAspectFill;
         dareImageView.clipsToBounds = true;
