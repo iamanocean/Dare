@@ -362,51 +362,29 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
-        switch segue.identifier as String!
+        switch self.currentDareTypeForSegue
         {
-        case "showCreation":
-            let destinationVC = segue.destinationViewController as DareCreationViewController
-        case "showChallengedDetail":
-            let destinationVC = segue.destinationViewController as ChallengedDareDetailViewController
-            destinationVC.dareId = self.currentDareElemForSeguq
-        case "showInProgressDetail":
-            let destinationVC = segue.destinationViewController as InProgressDareDetailViewController
-            destinationVC.dareId = self.currentDareElemForSeguq
-        case "worldInProgress":
-            let dest = segue.destinationViewController as InprogressWorldViewController
-            dest.dareId = self.currentDareElemForSeguq
-        case "showDetail":
-            let destinationVC = segue.destinationViewController as CompletedDareDetailViewController
-            destinationVC.dareId = self.currentDareElemForSeguq
-        default:
-            println("Error in loading new view")
-            println(self.currentDareTypeForSegue)
+            case INCOMPLETE_TYPE:
+                let destinationVC = segue.destinationViewController as ChallengedDareDetailViewController
+                destinationVC.dareId = self.currentDareElemForSeguq
+            case INPROGRESS_TYPE:
+                if self.currentUserForSeque == PFUser.currentUser()["username"] as NSString
+                {
+                    let destinationVC = segue.destinationViewController as InProgressDareDetailViewController
+                    destinationVC.dareId = self.currentDareElemForSeguq
+                }
+                else
+                {
+                   let dest = segue.destinationViewController as InprogressWorldViewController
+                   dest.dareId = self.currentDareElemForSeguq
+                }
+            case FINISHED_TYPE:
+                let destinationVC = segue.destinationViewController as CompletedDareDetailViewController
+                destinationVC.dareId = self.currentDareElemForSeguq
+            default:
+                println("Error in loading new view")
+                println(self.currentDareTypeForSegue)
         }
-        
-        
-//        switch self.currentDareTypeForSegue
-//        {
-//            case INCOMPLETE_TYPE:
-//                let destinationVC = segue.destinationViewController as ChallengedDareDetailViewController
-//                destinationVC.dareId = self.currentDareElemForSeguq
-//            case INPROGRESS_TYPE:
-//                if self.currentUserForSeque == PFUser.currentUser()["username"] as NSString
-//                {
-//                    let destinationVC = segue.destinationViewController as InProgressDareDetailViewController
-//                    destinationVC.dareId = self.currentDareElemForSeguq
-//                }
-//                else
-//                {
-//                   let dest = segue.destinationViewController as InprogressWorldViewController
-//                   dest.dareId = self.currentDareElemForSeguq
-//                }
-//            case FINISHED_TYPE:
-//                let destinationVC = segue.destinationViewController as CompletedDareDetailViewController
-//                destinationVC.dareId = self.currentDareElemForSeguq
-//            default:
-//                println("Error in loading new view")
-//                println(self.currentDareTypeForSegue)
-//        }
         
         // Create a new variable to store the instance of PlayerTableViewController
     }
