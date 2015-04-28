@@ -44,7 +44,7 @@ class SignInViewController: UIViewController {
             4. Go to target > Build phases > Copy Bundle Resources and add all of the typefaces
             5. See below
         */
-        let font = UIFont(name: "BebasNeueRegular", size: 48)
+        let font = UIFont(name: "BebasNeueRegular", size: 52)
         if let font = font {
             signInLabel.font = font;
         }

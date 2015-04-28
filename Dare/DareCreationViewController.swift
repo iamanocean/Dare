@@ -56,7 +56,7 @@ class DareCreationViewController: UIViewController, UIPickerViewDataSource, UIPi
     
     override func viewDidLoad() {
 
-        navButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: "userSelect")
+        navButton = UIBarButtonItem(title: "Vote", style: UIBarButtonItemStyle.Done, target: self, action: "userSelect")
         super.viewDidLoad()
         dare = Dare()
         pullDare()

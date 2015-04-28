@@ -364,6 +364,8 @@ class DareTableViewController: UITableViewController, UITableViewDataSource, UIT
         
         switch segue.identifier as String!
         {
+        case "showCreation":
+            let destinationVC = segue.destinationViewController as DareCreationViewController
         case "showChallengedDetail":
             let destinationVC = segue.destinationViewController as ChallengedDareDetailViewController
             destinationVC.dareId = self.currentDareElemForSeguq
